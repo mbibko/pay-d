@@ -1,0 +1,41 @@
+@tailwind base
+@tailwind components
+@tailwind utilities
+
+@layer base
+  body
+    font-family: "Space Mono", monospace, serif
+    font-optical-sizing: auto
+    font-weight: 400
+    font-style: normal
+  h1
+    @apply text-primary text-4xl md:text-5xl xl:text-6xl
+  h2
+    @apply text-primary text-3xl md:text-5xl xl:text-6xl
+
+@layer components
+  //.container
+  //  @apply max-w-[1146px]
+  .btn
+    @apply transition ease-in-out inline-flex items-center rounded-full px-5 py-2.5 text-center font-bold
+  .btn-primary
+    @apply text-white hover:bg-green-800
+    background: linear-gradient(291deg, #3C3 -18.14%, #309F52 93.59%)
+    &:hover
+      background: linear-gradient(291deg, #309F52 -18.14%, #3C3 93.59%)
+  .btn-secondary
+    @apply border-2 border-primary text-primary
+  .btn-sm
+    @apply px-5 py-1.5
+
+//@layer utilities
+
+
+.icon
+  background-size: contain
+  background-repeat: no-repeat
+
+.link
+  color: #28599f
+  &:hover
+    text-decoration: underline

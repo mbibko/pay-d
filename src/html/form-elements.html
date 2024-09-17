@@ -1,0 +1,16 @@
+{% macro label(title) %}
+  <label class="block">
+    <span class="font-semibold">{{ title }}</span>
+    {{ caller() }}
+  </label>
+{% endmacro %}
+{%
+  macro select(items = ["Corporate event", "Wedding",
+  "Birthday", "Other"])
+%}
+  <select class="mt-1 block w-full rounded border-gray-300">
+    {% for item in items %}
+      <option>{{ item }}</option>
+    {% endfor %}
+  </select>
+{% endmacro %}

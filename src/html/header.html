@@ -1,0 +1,57 @@
+<div class="container">
+  <header class="flex items-center justify-between gap-x-8 py-4 lg:h-24">
+    <div class="flex items-center">
+      <div>
+        <a href="#" class="block h-full"
+          ><span class="sr-only">Pay-D</span>
+          <svg width="132" height="40" class="h-full" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="#icon-logo"></use>
+          </svg>
+        </a>
+      </div>
+      <svg width="154" height="25" class="ml-5 hidden h-full 2xl:block" xmlns="http://www.w3.org/2000/svg">
+        <use xlink:href="#icon-toyota-logo"></use>
+      </svg>
+    </div>
+    <div class="flex items-center gap-12">
+      <menu class="hidden uppercase text-gray-800 lg:flex lg:gap-x-12 [&_a:hover]:text-blue-800">
+        <li>
+          <a href="#">Products</a>
+        </li>
+        <li><a href="#">Pricing</a></li>
+        <li>
+          <a href="#">How to start</a>
+        </li>
+        <li>
+          <a href="#">Downloads</a>
+        </li>
+      </menu>
+      <a href="#" class="btn btn-primary btn-sm">
+        CONTACT US
+        <svg class="ms-2" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+          <use xlink:href="#icon-arr"></use>
+        </svg>
+      </a>
+    </div>
+    <div class="flex lg:hidden">
+      <button
+        onclick="document.getElementById('mobile-nav').classList.toggle('hidden');"
+        type="button"
+        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+      >
+        <span class="sr-only">Open main menu</span>
+        <svg
+          class="size-10"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+    {% include "src/html/mobile-menu.html" %}
+  </header>
+</div>
