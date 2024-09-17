@@ -1,0 +1,30 @@
+<div class="mx-auto -mt-6 max-w-[45rem] rounded-2xl bg-gray-200 p-6">
+  <div class="mb-8 text-center">
+    <h3 class="mb-4">Online payment enablement</h3>
+    <p>Payment processing</p>
+  </div>
+  <div class="grid grid-cols-3 gap-4">
+    {%
+      for item in [
+        {
+          title: "Transaction initiation",
+          text: "Customer initiates transaction, Pay-D collects, forwards data and secures payment authorisation."
+        },
+        {
+          title: "Fund transfer",
+          text: "Authorized funds move from customer bank to your bank."
+        },
+        {
+          title: "Confirmation",
+          text: "Parties receive a payment confirmation."
+        }
+      ]
+    %}
+      <div class="relative flex flex-col gap-4 rounded-2xl bg-white p-4">
+        <span class="absolute right-2 top-2 text-3xl font-bold text-neutral-200">{{ loop.index }}</span>
+        <div class="font-bold">{{ item.title }}</div>
+        <span class="text-sm text-neutral-700">{{ item.text }}</span>
+      </div>
+    {% endfor %}
+  </div>
+</div>

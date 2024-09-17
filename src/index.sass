@@ -8,14 +8,16 @@
     font-optical-sizing: auto
     font-weight: 400
     font-style: normal
+  h1, h2, h3, h4, h5, h6
+    @apply text-primary
   h1
-    @apply text-primary text-4xl md:text-5xl xl:text-6xl
+    @apply text-6xl
   h2
-    @apply text-primary text-3xl md:text-5xl xl:text-6xl
+    @apply text-5xl
+  h3
+    @apply text-4xl
 
 @layer components
-  //.container
-  //  @apply max-w-[1146px]
   .btn
     @apply transition ease-in-out inline-flex items-center rounded-full px-5 py-2.5 text-center font-bold
   .btn-primary
@@ -28,8 +30,21 @@
   .btn-sm
     @apply px-5 py-1.5
 
-//@layer utilities
+  .features-table-row
+    //& > *
+    //  @apply rounded-tr-lg
+    //&>*:last-child
+    //  background: #EDEEF4
+    //&>*:not(:first-child) > *
+    //  @apply relative -top-4
 
+
+
+@layer utilities
+  .gradient-primary
+    background: var(--blue-gradient, linear-gradient(328deg, #0D2285 4.53%, #2B47CA 98.06%))
+  .gradient-secondary
+    background: var(--gradient-green, linear-gradient(292deg, #3C3 6.81%, #309F52 92.38%))
 
 .icon
   background-size: contain
