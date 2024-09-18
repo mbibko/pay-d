@@ -1,26 +1,18 @@
-<footer class="bg-neutral-700">
-  <div class="container flex flex-col py-12 lg:flex-row lg:py-24">
-    <div class="lg:flex">
-      <div class="mb-12 lg:mr-20">
-        <img
-          width="180"
-          class="mx-auto block"
-          src="/img/award-2022.png"
-          alt=""
-        />
+<footer class="bg-[#50525E] text-white">
+  <div class="container py-12">
+    <div class="flex flex-col items-center gap-20 pb-8 lg:flex-row">
+      <a href="#">
+        <svg width="164" height="50" xmlns="http://www.w3.org/2000/svg">
+          <use xlink:href="#icon-pay-d-logo"></use>
+        </svg>
+      </a>
+      <div class="flex flex-1 gap-8 border-b border-gray-500 py-3 [&_a]:font-bold">
+        <a href="#">Get started</a>
+        <a href="#">Imprint</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Contact</a>
       </div>
-      {% include "src/html/footer-nav.html" %}
     </div>
-    <div class="lg:-order-1 lg:mr-16 xl:mr-32">
-      <div class="grid grid-cols-2 lg:block">
-        <img class="mb-12 block" src="/img/logo-white.png" alt="" />
-        <img
-          class="mb-12 block"
-          src="/img/catalogo-universita-white.png"
-          alt=""
-        />
-      </div>
-      {% include "src/html/socials.html" %}
-    </div>
+    <div class="text-right text-sm">Copyright 2024 by Pay-D</div>
   </div>
 </footer>

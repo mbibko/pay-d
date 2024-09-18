@@ -1,21 +1,24 @@
 <section class="mb-20">
-  <div class="container grid py-8 lg:grid-cols-12 lg:gap-8 lg:py-16 xl:gap-0">
-    <div class="mr-auto place-self-center lg:col-span-7">
-      <div class="mb-5">
-        <h1 class="mb-4 max-w-2xl font-light"><strong class="font-bold">TFS In-house</strong> Payment solution</h1>
-        <p class="text-gray-primary mb-6 max-w-2xl font-light md:text-lg lg:mb-8 lg:text-xl">
+  <div class="container grid py-8 lg:grid-cols-12 lg:gap-8 lg:py-8 xl:gap-0">
+    <div class="mr-auto place-self-center lg:col-span-8">
+      <div class="mb-20">
+        <h1 class="mb-4 max-w-2xl font-light"><strong class="font-bold">TFS In-house</strong> Payment&nbsp;solution</h1>
+        <p class="text-gray-primary mb-6 max-w-2xl font-mono font-light md:text-lg lg:mb-8 lg:text-xl">
           Integrated online payment <br />
           solution for your business.
         </p>
-        <a href="#" class="btn btn-primary">
+        <a href="#" class="btn btn-primary pr-3">
           CONTACT US
-          <svg class="ms-2 fill-white" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+          <svg class="ms-5 flex-none fill-white" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
             <use xlink:href="#icon-arr"></use>
           </svg>
         </a>
       </div>
-      <div class="flex gap-4">
-        <span class="text-gray-primary">Frequently used payment methods:</span>
+      <div class="flex items-center gap-10">
+        <span class="text-gray-primary font-medium leading-4"
+          >Frequently used <br />
+          payment methods:</span
+        >
         <div class="flex gap-2">
           {% for item in ["amex", "apple-pay", "g-pay", "mastercard", "paypal", "visa"] %}
             <svg width="60" height="38" xmlns="http://www.w3.org/2000/svg">
@@ -25,20 +28,20 @@
         </div>
       </div>
     </div>
-    <div class="lg:col-span-5 lg:mt-0">
-      <img src="/img/hero-img.png" alt="mockup" />
+    <div class="lg:col-span-4 lg:mt-0">
+      <img width="407" height="531" src="/img/hero-img.png" alt="mockup" />
     </div>
   </div>
-  <div class="container -mt-20 pb-10">
-    <hr class="border-primary mb-10 max-w-[700px] opacity-20" />
+  <div class="container -mt-7 pb-10">
+    <hr class="border-primary mb-10 max-w-[820px] opacity-20" />
     <!--    0D2285-->
-    <div class="grid grid-cols-4 gap-6">
-      {% for item in ["Safe, reliable and easy to use", "Control & ownership of customer data", "Easy API-based setup & onboarding", "Secure & compliant"] %}
-        <div class="text-primary flex items-center gap-6">
-          <svg class="flex size-[95px] flex-none items-center" xmlns="http://www.w3.org/2000/svg">
+    <div class="grid grid-cols-4 gap-6 pl-8">
+      {% for item in ["Safe, reliable and easy to use", "Control & ownership of customer data", "Easy API-based setup & onboarding", "Secure &<br> compliant"] %}
+        <div class="text-primary flex items-center gap-5 font-medium leading-4">
+          <svg class="flex size-[76px] flex-none items-center" xmlns="http://www.w3.org/2000/svg">
             <use xlink:href="#icon-features-{{ loop.index }}"></use>
           </svg>
-          <span> {{ item }} </span>
+          <span> {{ item | safe }} </span>
         </div>
       {% endfor %}
     </div>

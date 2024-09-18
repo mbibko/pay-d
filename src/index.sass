@@ -4,53 +4,42 @@
 
 @layer base
   body
-    font-family: "Space Mono", monospace, serif
+    font-family: "Space Grotesk", sans-serif
     font-optical-sizing: auto
     font-weight: 400
     font-style: normal
   h1, h2, h3, h4, h5, h6
     @apply text-primary
   h1
-    @apply text-6xl
+    @apply text-[5rem] leading-[5rem]
   h2
-    @apply text-5xl
+    @apply text-[4.125rem] leading-[4.125rem]
   h3
-    @apply text-4xl
+    @apply text-[3rem] leading-[3rem]
 
 @layer components
   .btn
-    @apply transition ease-in-out inline-flex items-center rounded-full px-5 py-2.5 text-center font-bold
+    @apply transition ease-in-out inline-flex items-center rounded-full px-5 py-[0.6rem] text-center font-bold font-mono
   .btn-primary
-    @apply text-white hover:bg-green-800
+    @apply text-white hover:bg-green-800 text-xl
     background: linear-gradient(291deg, #3C3 -18.14%, #309F52 93.59%)
     &:hover
       background: linear-gradient(291deg, #309F52 -18.14%, #3C3 93.59%)
   .btn-secondary
     @apply border-2 border-primary text-primary
   .btn-sm
-    @apply px-5 py-1.5
-
-  .features-table-row
-    //& > *
-    //  @apply rounded-tr-lg
-    //&>*:last-child
-    //  background: #EDEEF4
-    //&>*:not(:first-child) > *
-    //  @apply relative -top-4
-
+    @apply py-[0.3rem] px-3
 
 
 @layer utilities
-  .gradient-primary
-    background: var(--blue-gradient, linear-gradient(328deg, #0D2285 4.53%, #2B47CA 98.06%))
-  .gradient-secondary
-    background: var(--gradient-green, linear-gradient(292deg, #3C3 6.81%, #309F52 92.38%))
+  .custom-gradient-primary
+    background: linear-gradient(328deg, #0D2285 4.53%, #2B47CA 98.06%)
+  .custom-gradient-secondary
+    background: linear-gradient(292deg, #33CC33 6.81%, #309F52 92.38%)
 
-.icon
-  background-size: contain
-  background-repeat: no-repeat
-
-.link
-  color: #28599f
-  &:hover
-    text-decoration: underline
+//.icon
+//  background-size: contain
+//  background-repeat: no-repeat
+//
+//.link
+//  @apply text-primary hover:underline

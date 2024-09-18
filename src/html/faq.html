@@ -1,0 +1,181 @@
+<section class="container">
+  <div class="mx-auto flex max-w-[800px] flex-col items-center">
+    <a href="#" class="btn btn-secondary mb-4">Frequently asked questions</a>
+
+    <h2 class="h1 mb-10 text-center font-light">
+      <span class="text-balance font-bold">Questions & answers</span>
+    </h2>
+    <p class="text-[#343434]">
+      If the question you are looking for is not listed below, feel free to ask our
+      <a href="#" class="text-primary font-bold underline">service team</a>.
+    </p>
+
+    <!-- FAQ -->
+    <div class="flex w-full flex-col gap-8 px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+      <!-- Accordion -->
+      {%
+        for item in [
+
+          {
+            title: "General",
+            child: [
+              {
+                title: "Who can use Pay-D?",
+                text: "We currently support major Credit and Debit Cards (such as Visa, MasterCard, American Express), Digital Wallets (including PayPal, Apple Pay, Google Pay)"
+              },
+              {
+                title: "How can I use/get Pay-D?",
+                text: "We currently support major Credit and Debit Cards (such as Visa, MasterCard, American Express), Digital Wallets (including PayPal, Apple Pay, Google Pay)"
+              },
+              {
+                title: "How can I get in touch with Pay-D?",
+                text: "We currently support major Credit and Debit Cards (such as Visa, MasterCard, American Express), Digital Wallets (including PayPal, Apple Pay, Google Pay)"
+              },
+              {
+                title: "What kind of payments can I accept with Pay-D?",
+                text: "We currently support major Credit and Debit Cards (such as Visa, MasterCard, American Express), Digital Wallets (including PayPal, Apple Pay, Google Pay)"
+              }
+            ]
+          },
+          {
+            title: "Pricing",
+            child: [
+              {
+                title: "Who can use Pay-D?",
+                text: "We currently support major Credit and Debit Cards (such as Visa, MasterCard, American Express), Digital Wallets (including PayPal, Apple Pay, Google Pay)"
+              },
+              {
+                title: "How can I use/get Pay-D?",
+                text: "We currently support major Credit and Debit Cards (such as Visa, MasterCard, American Express), Digital Wallets (including PayPal, Apple Pay, Google Pay)"
+              },
+              {
+                title: "How can I get in touch with Pay-D?",
+                text: "We currently support major Credit and Debit Cards (such as Visa, MasterCard, American Express), Digital Wallets (including PayPal, Apple Pay, Google Pay)"
+              },
+              {
+                title: "What kind of payments can I accept with Pay-D?",
+                text: "We currently support major Credit and Debit Cards (such as Visa, MasterCard, American Express), Digital Wallets (including PayPal, Apple Pay, Google Pay)"
+              }
+            ]
+          },
+          {
+            title: "Additional",
+            child: [
+              {
+                title: "Who can use Pay-D?",
+                text: "We currently support major Credit and Debit Cards (such as Visa, MasterCard, American Express), Digital Wallets (including PayPal, Apple Pay, Google Pay)"
+              }
+            ]
+          },
+          {
+            title: "Integration",
+            child: [
+              {
+                title: "Who can use Pay-D?",
+                text: "We currently support major Credit and Debit Cards (such as Visa, MasterCard, American Express), Digital Wallets (including PayPal, Apple Pay, Google Pay)"
+              }
+            ]
+          },
+          {
+            title: "Merchant Onboarding",
+            child: [
+              {
+                title: "Who can use Pay-D?",
+                text: "We currently support major Credit and Debit Cards (such as Visa, MasterCard, American Express), Digital Wallets (including PayPal, Apple Pay, Google Pay)"
+              }
+            ]
+          },
+          {
+            title: "Data Processing",
+            child: [
+              {
+                title: "Who can use Pay-D?",
+                text: "We currently support major Credit and Debit Cards (such as Visa, MasterCard, American Express), Digital Wallets (including PayPal, Apple Pay, Google Pay)"
+              }
+            ]
+          },
+          {
+            title: "Currency Acceptance",
+            child: [
+              {
+                title: "Who can use Pay-D?",
+                text: "We currently support major Credit and Debit Cards (such as Visa, MasterCard, American Express), Digital Wallets (including PayPal, Apple Pay, Google Pay)"
+              }
+            ]
+          },
+          {
+            title: "Use Cases",
+            child: [
+              {
+                title: "Who can use Pay-D?",
+                text: "We currently support major Credit and Debit Cards (such as Visa, MasterCard, American Express), Digital Wallets (including PayPal, Apple Pay, Google Pay)"
+              }
+            ]
+          },
+          {
+            title: "Global Reach",
+            child: [
+              {
+                title: "Who can use Pay-D?",
+                text: "We currently support major Credit and Debit Cards (such as Visa, MasterCard, American Express), Digital Wallets (including PayPal, Apple Pay, Google Pay)"
+              }
+            ]
+          }
+
+        ]
+      %}
+        {% set loopIndex = loop.index %}
+        <div class="rounded-xl border border-indigo-300 px-6 py-4 shadow-lg" id="heading-{{ loopIndex }}">
+          <button
+            class="text-primary group inline-flex w-full items-center justify-between gap-x-3 rounded-lg text-start font-bold transition"
+            aria-expanded="{% if loop.first %}true{% else %}false{% endif %}"
+            aria-controls="collapse-{{ loopIndex }}"
+          >
+            {{ item.title }}
+            <span class="custom-gradient-primary flex size-10 items-center justify-center rounded-lg">
+              <svg class="flex-none" width="12" height="12" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="#icon-{% if loop.first %}minus{% else %}plus{% endif %}"></use>
+              </svg>
+            </span>
+          </button>
+          <div
+            id="collapse-{{ loopIndex }}"
+            class="{% if loop.first %}{% else %}hidden{% endif %} w-full overflow-hidden transition-[height] duration-300"
+            role="region"
+            aria-labelledby="heading-{{ loopIndex }}"
+          >
+            {% for child in item.child %}
+              <div class="border-b py-4" id="heading-loopIndex-{{ loop.index }}">
+                <button
+                  class="{% if loop.first %}text-primary font-bold mb-4{% else %}{% endif %} group inline-flex w-full items-center justify-between gap-x-3 rounded-lg text-start transition"
+                  aria-expanded="{% if loop.first %}true{% else %}false{% endif %}"
+                  aria-controls="collapse-loopIndex-{{ loop.index }}"
+                >
+                  {{ child.title }}
+                  <svg
+                    class="{% if loop.first %}rotate-180{% endif %} flex-none"
+                    width="12"
+                    height="12"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <use xlink:href="#icon-{% if loop.first %}arr-bottom{% else %}arr-bottom{% endif %}"></use>
+                  </svg>
+                </button>
+                <div
+                  id="collapse-loopIndex-{{ loop.index }}"
+                  class="{% if loop.first %}{% else %}hidden{% endif %} w-full overflow-hidden text-sm transition-[height] duration-300"
+                  role="region"
+                  aria-labelledby="heading-loopIndex-{{ loop.index }}"
+                >
+                  {{ child.text }}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      {% endfor %}
+      <!-- End Accordion -->
+    </div>
+    <!-- End FAQ -->
+  </div>
+</section>

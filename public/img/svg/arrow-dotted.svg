@@ -1,0 +1,6 @@
+<svg width="43" height="13" viewBox="0 0 43 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="arrow">
+<path id="dash-line" d="M1.5 6L33.5 6" stroke="#0D2285" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 7"/>
+<path id="vector" fill-rule="evenodd" clip-rule="evenodd" d="M35.8636 12.728L42.2275 6.36401L35.8636 5.27501e-05L34.2405 1.6231L38.9814 6.36401L34.2405 11.1049L35.8636 12.728Z" fill="#0D2285"/>
+</g>
+</svg>

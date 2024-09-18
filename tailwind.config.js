@@ -5,10 +5,14 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: "2rem", // 32px
       screens: {
-        "2xl": "1146px", // Adjust as needed for extra extra large screens
+        "2xl": "1210px", // Adjust as needed for extra extra large screens
       },
+    },
+    fontFamily: {
+      mono: ["Space Mono", "monospace", "serif"],
+      grotesk: ["Space Grotesk", "sans-serif"],
     },
     extend: {
       colors: {

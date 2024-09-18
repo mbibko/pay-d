@@ -1,0 +1,45 @@
+<section class="container mb-40 pt-20">
+  <div class="mx-auto flex max-w-[30rem] flex-col items-center">
+    <a href="#" class="btn btn-secondary mb-4">Start</a>
+
+    <h2 class="h1 mb-10 text-center font-light">
+      <span class="text-balance font-bold">How to start with Pay-D</span>
+    </h2>
+  </div>
+
+  <div class="flex gap-10">
+    {%
+      for item in [
+      {
+      title: "Finding a solution",
+      text: 'Let\'s discuss your individual  requirements to understand your goals. If possible, please complete the following <span class="underline">questionnaire</span> and email it to us directly.'
+      },
+      {
+      title: "Integration & onboarding",
+      text: 'Integrate our payment page and APIs seamlessly into your system. Complete <a class="text-primary" href="#">merchant onboarding</a> to start receiving payments.'
+      },
+      {
+      title: "Receive payments",
+      text: "Begin accepting payments easily and securely online, offering your customers a seamless experience. "
+      }
+      ]
+    %}
+      <div
+        class="{% if loop.first %}custom-gradient-primary text-white{% else %}text-neutral-700{% endif %} relative flex w-[290px] flex-none flex-col gap-6 rounded-2xl border border-blue-100 bg-white p-8 shadow-lg shadow-gray-500"
+      >
+        <span class="absolute right-2 top-2 text-3xl font-bold text-neutral-200">{{ loop.index }}</span>
+        <svg width="70" height="40" xmlns="http://www.w3.org/2000/svg">
+          <use xlink:href="#icon-features-{{ loop.index + 4 }}"></use>
+        </svg>
+        <div class="{% if loop.first %}text-white{% else %}text-primary{% endif %} font-bold">{{ item.title }}</div>
+        <span class="text-sm">{{ item.text | safe }}</span>
+      </div>
+
+      {% if loop.last !== true %}
+        <svg class="flex-none self-center" width="70" height="40" xmlns="http://www.w3.org/2000/svg">
+          <use xlink:href="#icon-arrow-dotted"></use>
+        </svg>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
