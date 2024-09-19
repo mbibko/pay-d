@@ -1,7 +1,7 @@
 {% set PRODUCTS = [Standard, Advanced] %}
 
 <!-- Comparison Table -->
-<div class="container relative mb-10 grid max-w-[85rem] px-4 py-10 max-lg:gap-6">
+<div class="relative mb-10 grid max-lg:gap-6">
   <!-- Header -->
   <!-- TODO check lg:sticky -->
   <div class="start-0 top-0 bg-white/60 backdrop-blur-md lg:block">
@@ -24,18 +24,22 @@
         }
         ]
       %}
-        <div class="{% if loop.last %}lg:rounded-tr-lg lg:bg-[#EDEEF4] max-lg:border-l-2{% else %}{% endif %} px-8">
+        <div class="{% if loop.last %}lg:rounded-tr-lg lg:bg-[#EDEEF4] max-lg:border-l-2{% else %}{% endif %} px-3">
           <div
-            class="{% if loop.last %}custom-gradient-secondary{% else %}custom-gradient-primary{% endif %} relative rounded-2xl py-6 lg:-top-4 lg:mb-4 lg:px-2 lg:text-white"
+            class="{% if loop.last %}custom-gradient-secondary{% else %}custom-gradient-primary{% endif %} relative rounded-xl py-3 lg:-top-8 lg:px-2 lg:text-white"
           >
             <div
-              class="{% if loop.last %}border-green-800{% else %}border-primary{% endif %} text-center text-lg font-bold max-lg:border-b-2 max-lg:uppercase"
+              class="{% if loop.last %}border-green-800{% else %}border-primary{% endif %} text-center font-mono text-xl font-bold max-lg:border-b-2 max-lg:uppercase"
             >
               {{ item.product }} <span class="hidden lg:inline">Product</span>
             </div>
             <p class="mt-2 text-balance text-sm max-lg:font-bold lg:text-center">{{ item.integration }}</p>
           </div>
-          <p class="text-sm text-neutral-700 lg:text-center">{{ item.text }}</p>
+          <p
+            class="{% if loop.last %}lg:border-white{% else %}{% endif %} text-sm leading-tight text-neutral-700 lg:-mt-5 lg:border-b lg:pb-5 lg:text-center"
+          >
+            {{ item.text }}
+          </p>
         </div>
       {% endfor %}
       <!-- End Col -->
@@ -111,15 +115,15 @@
     icon: "diagram",
     data: [
     '
-    <div class="grid divide-amber-50">
-      <div class="text-lg text-primary font-bold">1% + 0,10€</div><div class="text-[#656565] text-sm font-medium mb-4">Price per transaction*</div><div class="text-xs">For all standard Visa and Mastercard transactions (Credit or Debit Cards).</div>
-      <div>More details about the pricing can be found <a class="underline text-primary" href="#">here</a> </div>
+    <div class="grid">
+      <div class="text-xl text-primary font-bold font-mono">1% + 0,10€</div><div class="text-[#656565] text-sm font-medium mb-4">Price per transaction*</div><div class="text-xs">For all standard Visa and Mastercard transactions (Credit or Debit Cards).</div>
+      <div class="text-xs border-t pt-2 mt-2">More details about the pricing <br> can be found <a class="underline text-primary" href="#">here</a> </div>
     </div>
     ',
     '
-    <div class="grid divide-amber-50">
-      <div class="text-lg text-primary font-bold">1% + 0,10€</div><div class="text-[#656565] text-sm font-medium mb-4">Price per transaction*</div><div class="text-xs">For all standard Visa and Mastercard transactions (Credit or Debit Cards).</div>
-      <div>More details about the pricing can be found <a class="underline text-primary" href="#">here</a> </div>
+    <div class="grid">
+      <div class="text-xl text-primary font-bold font-mono">2,5% + 0,10€</div><div class="text-[#656565] text-sm font-medium mb-4">Price per transaction*</div><div class="text-xs">For all standard Visa and Mastercard transactions (Credit or Debit Cards).</div>
+      <div class="text-xs border-t pt-2 mt-2">More details about the pricing <br> can be found <a class="underline text-primary" href="#">here</a> </div>
     </div>
     '
     ]
@@ -135,15 +139,17 @@
         class="features-table-row grid grid-cols-2 gap-4 rounded-xl max-lg:gap-4 max-lg:bg-[#EDEEF4] max-lg:pb-4 lg:grid-cols-3"
       >
         <!-- Item -->
-        <li class="flex border-b border-gray-300 pb-1.5 max-lg:col-span-2 max-lg:p-5 lg:py-5">
-          <svg class="fill-primary me-4 mt-1 flex-none" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
+        <li
+          class="{% if loop.last %}{% else %}border-b{% endif %} flex border-gray-300 pb-1.5 max-lg:col-span-2 max-lg:p-5 lg:py-5"
+        >
+          <svg class="fill-primary me-2 mt-1 flex-none" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
             <use xlink:href="#icon-simple-{{ item.icon }}"></use>
           </svg>
           <div class="">
-            <span class="text-primary font-bold">{{ item.title }}</span>
+            <span class="text-primary font-mono font-bold">{{ item.title }}</span>
             <p class="text-sm text-gray-800">{{ item.text }}</p>
-            <a href="#" class="btn btn-sm btn-secondary mt-2">
-              Learn more
+            <a href="#" class="btn btn-xs btn-secondary mt-2">
+              LEARN MORE
               <svg class="fill-primary ms-2" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
                 <use xlink:href="#icon-arr"></use>
               </svg>
@@ -154,7 +160,7 @@
 
         {% for field in item.data %}
           <!-- Item -->
-          <li class="{% if loop.last %}lg:bg-[#EDEEF4] lg:border-white{% else %}{% endif %} lg:px-8">
+          <li class="{% if loop.last %}lg:bg-[#EDEEF4] lg:border-white lg:rounded-br-lg{% else %}{% endif %} lg:px-8">
             <div
               class="{% if loop.last %}lg:border-white{% else %}{% endif %} grid h-full lg:place-content-center lg:border-b lg:py-4"
             >

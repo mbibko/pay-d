@@ -12,10 +12,7 @@ export default {
   ],
   build: {
     rollupOptions: {
-      input: [
-        path.resolve(__dirname, "index.html"),
-        // path.resolve(__dirname, "page.html"),
-      ],
+      input: [path.resolve(__dirname, "index.html"), path.resolve(__dirname, "test.html")],
     },
   },
 };

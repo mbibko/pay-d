@@ -15,7 +15,7 @@
   h2
     @apply text-[4.125rem] leading-[4.125rem]
   h3
-    @apply text-[3rem] leading-[3rem]
+    @apply text-[3.25rem] leading-[3.25rem]
 
 @layer components
   .btn
@@ -28,7 +28,11 @@
   .btn-secondary
     @apply border-2 border-primary text-primary
   .btn-sm
-    @apply py-[0.3rem] px-3
+    @apply py-[0.3rem] px-4 text-base
+  .btn-xs
+    @apply py-[0.1rem] px-3 text-base border
+  .mockup-circle
+    @apply flex gap-4 text-xs uppercase font-bold tracking-widest flex-col items-center justify-center rounded-full text-center text-white
 
 
 @layer utilities
@@ -36,10 +40,7 @@
     background: linear-gradient(328deg, #0D2285 4.53%, #2B47CA 98.06%)
   .custom-gradient-secondary
     background: linear-gradient(292deg, #33CC33 6.81%, #309F52 92.38%)
-
-//.icon
-//  background-size: contain
-//  background-repeat: no-repeat
-//
-//.link
-//  @apply text-primary hover:underline
+  .before
+    @apply relative before:absolute before:block before:content-[''] before:-z-10
+  .before-center
+    @apply before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2

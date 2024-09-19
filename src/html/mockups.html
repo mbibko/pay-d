@@ -1,5 +1,20 @@
-<div class="bg-[#E6E8ED]">
-  <div class="container text-center">
-    <img class="relative top-20" src="/img/mockups.png" alt="mockups" />
+{% from "./elements/popover.html" import popover %}
+
+<div class="bg-[#E6E8ED] pb-6">
+  <div class="container">
+    <div class="relative top-20 flex items-center justify-center">
+      <div class="relative mt-11 flex-none self-start">
+        {{ popover("Billing and <br> Invoicing", "w-[150px] left-[30px] top-[-35px]") }}
+        <img width="330" class="" src="/img/mockups/1.png" alt="mockups" />
+      </div>
+      <div class="relative z-10 flex-none">
+        {{ popover("Access to <br> Analytics & <br> Reporting", "w-[200px] left-[20%] top-[-50px]") }}
+        <div class="-me-[60px] -ms-[60px]"><img width="484" src="/img/mockups/2.png" alt="mockups" /></div>
+      </div>
+      <div class="relative flex-none">
+        {{ popover("Customisable <br> payment <br> page", "w-[175px] right-0 top-[-100px]") }}
+        <img width="209" class="" src="/img/mockups/3.png" alt="mockups" />
+      </div>
+    </div>
   </div>
 </div>

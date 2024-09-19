@@ -1,11 +1,15 @@
 <section class="container">
-  <div class="mx-auto flex max-w-[30rem] flex-col items-center">
-    <a href="#" class="btn btn-secondary mb-4">Products</a>
+  <div class="mx-auto max-w-[1060px]">
+    <div class="mb-16 flex flex-col items-center">
+      <span class="btn btn-secondary btn-sm mb-4">PRODUCTS</span>
 
-    <h2 class="h1 mb-10 text-center font-light">
-      <span class="text-balance font-bold">How you can use our features</span>
-    </h2>
+      <h2 class="h1 mb-10 text-center font-light">
+        <span class="text-balance font-bold"
+          >How you can use <br />
+          our features</span
+        >
+      </h2>
+    </div>
+    {% include "src/html/features-plans.html" %}
   </div>
-
-  {% include "src/html/features-plans.html" %}
 </section>

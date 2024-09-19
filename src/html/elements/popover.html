@@ -1,0 +1,8 @@
+{% macro popover(title, className) %}
+  <div class="custom-gradient-primary {{ className }} absolute rounded-xl p-4 text-xl font-bold text-white">
+    {{ title | safe }}
+    <svg class="absolute left-1/2 top-full -translate-x-3" width="30" height="14" xmlns="http://www.w3.org/2000/svg">
+      <use xlink:href="#icon-corner"></use>
+    </svg>
+  </div>
+{% endmacro %}

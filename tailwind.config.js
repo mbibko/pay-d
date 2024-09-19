@@ -17,8 +17,13 @@ module.exports = {
     extend: {
       colors: {
         primary: "#0D2285",
+        secondary: "#3C3",
         "gray-primary": "#5d5d5d",
       },
+      // backgroundImage: (theme) => ({
+      //   "gradient-to-45": "linear-gradient(45deg, #ffed4a, #ff3860)",
+      //   "gradient-to-135": "linear-gradient(135deg, #ffed4a, #ff3860)",
+      // }),
     },
   },
   plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms"), require("tailwindcss-container-bleed")],

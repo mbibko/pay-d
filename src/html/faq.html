@@ -1,8 +1,8 @@
-<section class="container">
+<section class="container mb-8">
   <div class="mx-auto flex max-w-[800px] flex-col items-center">
-    <a href="#" class="btn btn-secondary mb-4">Frequently asked questions</a>
+    <span class="btn btn-secondary btn-sm mb-4">FREQUENTLY ASKED QUESTIONS</span>
 
-    <h2 class="h1 mb-10 text-center font-light">
+    <h2 class="h1 mb-4 text-center font-light">
       <span class="text-balance font-bold">Questions & answers</span>
     </h2>
     <p class="text-[#343434]">
@@ -11,7 +11,7 @@
     </p>
 
     <!-- FAQ -->
-    <div class="flex w-full flex-col gap-8 px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+    <div class="flex w-full flex-col gap-4 py-10 lg:py-14">
       <!-- Accordion -->
       {%
         for item in [
@@ -125,14 +125,14 @@
         ]
       %}
         {% set loopIndex = loop.index %}
-        <div class="rounded-xl border border-indigo-300 px-6 py-4 shadow-lg" id="heading-{{ loopIndex }}">
+        <div class="rounded-xl border px-6 py-4 shadow-lg" id="heading-{{ loopIndex }}">
           <button
-            class="text-primary group inline-flex w-full items-center justify-between gap-x-3 rounded-lg text-start font-bold transition"
+            class="text-primary group inline-flex w-full items-center justify-between gap-x-3 rounded-lg text-start font-mono text-xl font-bold transition"
             aria-expanded="{% if loop.first %}true{% else %}false{% endif %}"
             aria-controls="collapse-{{ loopIndex }}"
           >
             {{ item.title }}
-            <span class="custom-gradient-primary flex size-10 items-center justify-center rounded-lg">
+            <span class="custom-gradient-primary flex size-8 items-center justify-center rounded-lg">
               <svg class="flex-none" width="12" height="12" xmlns="http://www.w3.org/2000/svg">
                 <use xlink:href="#icon-{% if loop.first %}minus{% else %}plus{% endif %}"></use>
               </svg>
@@ -163,7 +163,7 @@
                 </button>
                 <div
                   id="collapse-loopIndex-{{ loop.index }}"
-                  class="{% if loop.first %}{% else %}hidden{% endif %} w-full overflow-hidden text-sm transition-[height] duration-300"
+                  class="{% if loop.first %}{% else %}hidden{% endif %} w-full overflow-hidden px-3 pt-3 text-sm transition-[height] duration-300"
                   role="region"
                   aria-labelledby="heading-loopIndex-{{ loop.index }}"
                 >
