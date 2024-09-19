@@ -1,4 +1,4 @@
-<section class="container mb-56 pt-20">
+<section class="container relative z-10 pb-56 pt-20">
   <div class="mx-auto flex max-w-[30rem] flex-col items-center">
     <span class="btn btn-secondary btn-sm mb-4">Start</span>
 
@@ -25,18 +25,29 @@
       ]
     %}
       <div
-        class="{% if loop.first %}custom-gradient-primary text-white{% else %}text-neutral-700{% endif %} relative flex w-[290px] flex-none flex-col gap-4 rounded-2xl border border-sky-100 bg-white px-7 pb-4 pt-8 shadow-lg shadow-gray-300"
+        class="{% if loop.first %}custom-gradient-primary text-white{% else %}text-neutral-700{% endif %} border-color relative flex w-[290px] flex-none flex-col gap-5 rounded-2xl border bg-white px-7 pb-5 pt-8 shadow-[0_0_12px_0_rgba(0,0,0,0.10)]"
       >
-        <span class="text-primary absolute right-7 top-7 font-mono text-4xl opacity-40">{{ loop.index }}</span>
-        <svg width="70" height="40" xmlns="http://www.w3.org/2000/svg">
-          <use xlink:href="#icon-features-{{ loop.index + 4 }}"></use>
-        </svg>
+        <div class="flex justify-between">
+          <img height="40" class="h-[40px] flex-none" src="/img/features/{{ loop.index + 4 }}.png" alt="icon" />
+          <span class="{% if loop.first %}text-white{% else %}text-primary{% endif %} font-mono text-4xl opacity-40"
+            >{{ loop.index }}</span
+          >
+        </div>
         <div
           class="{% if loop.first %}text-white{% else %}text-primary{% endif %} font-mono text-lg font-bold leading-tight"
         >
           {{ item.title }}
         </div>
         <span class="text-sm leading-tight">{{ item.text | safe }}</span>
+        {% if loop.first %}
+          <div
+            class="custom-gradient-secondary absolute bottom-0 left-1/2 z-10 flex size-[40px] -translate-x-2/4 translate-y-2/4 place-items-center rounded-full"
+          >
+            <svg class="m-auto flex-none fill-white" width="18" height="14" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="#icon-simple-email-r"></use>
+            </svg>
+          </div>
+        {% endif %}
       </div>
 
       {% if loop.last !== true %}

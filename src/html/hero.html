@@ -35,12 +35,10 @@
   <div class="container -mt-7 pb-10">
     <hr class="border-primary mb-10 max-w-[820px] opacity-20" />
     <!--    0D2285-->
-    <div class="grid grid-cols-4 gap-6 pl-8">
-      {% for item in ["Safe, reliable and easy to use", "Control & ownership of customer data", "Easy API-based setup & onboarding", "Secure &<br> compliant"] %}
-        <div class="text-primary flex items-center gap-5 font-medium leading-4">
-          <svg class="flex size-[76px] flex-none items-center" xmlns="http://www.w3.org/2000/svg">
-            <use xlink:href="#icon-features-{{ loop.index }}"></use>
-          </svg>
+    <div class="flex gap-1 pl-8">
+      {% for item in ["Safe, reliable <br> and easy to use", "Control & ownership <br> of customer data", "Easy API-based setup & onboarding", "Secure &<br> compliant"] %}
+        <div class="text-primary flex flex-1 items-center gap-5 font-medium leading-4 last:pl-12">
+          <img height="68" class="h-[68px] flex-none" src="/img/features/{{ loop.index }}.png" alt="icon" />
           <span> {{ item | safe }} </span>
         </div>
       {% endfor %}
