@@ -1,12 +1,12 @@
 {% set PRODUCTS = [Standard, Advanced] %}
 
 <!-- Comparison Table -->
-<div class="relative mb-10 grid max-lg:gap-6">
+<div class="relative mb-10 max-lg:gap-6">
   <!-- Header -->
   <!-- TODO check lg:sticky -->
   <div class="start-0 top-0 lg:block">
-    <!-- Grid -->
-    <div class="features-table-row grid grid-cols-2 gap-4 lg:grid-cols-3">
+    <!-- Row -->
+    <div class="features-table-row">
       <div class="hidden lg:block">&nbsp;</div>
       <!-- End Col -->
 
@@ -44,7 +44,7 @@
       {% endfor %}
       <!-- End Col -->
     </div>
-    <!-- End Grid -->
+    <!-- End Row -->
   </div>
   <!-- End Header -->
 
@@ -115,13 +115,13 @@
     icon: "diagram",
     data: [
     '
-    <div class="grid">
+    <div class="flex flex-col">
       <div class="text-xl text-primary font-bold font-mono">1% + 0,10€</div><div class="text-[#656565] text-sm font-medium mb-4">Price per transaction*</div><div class="text-xs">For all standard Visa and Mastercard transactions (Credit or Debit Cards).</div>
       <div class="text-xs border-t pt-2 mt-2">More details about the pricing <br> can be found <a class="underline text-primary" href="#">here</a> </div>
     </div>
     ',
     '
-    <div class="grid">
+    <div class="flex flex-col">
       <div class="text-xl text-primary font-bold font-mono">2,5% + 0,10€</div><div class="text-[#656565] text-sm font-medium mb-4">Price per transaction*</div><div class="text-xs">For all standard Visa and Mastercard transactions (Credit or Debit Cards).</div>
       <div class="text-xs border-t pt-2 mt-2">More details about the pricing <br> can be found <a class="underline text-primary" href="#">here</a> </div>
     </div>
@@ -135,13 +135,9 @@
     <!-- Section -->
     <div class="space-y-4 lg:space-y-0">
       <!-- List -->
-      <ul
-        class="features-table-row grid grid-cols-2 gap-4 rounded-xl max-lg:gap-4 max-lg:bg-[#EDEEF4] max-lg:pb-4 lg:grid-cols-3"
-      >
+      <ul class="features-table-row rounded-xl max-lg:bg-[#EDEEF4] max-lg:pb-4">
         <!-- Item -->
-        <li
-          class="{% if loop.last %}{% else %}border-b{% endif %} flex border-gray-300 pb-1.5 max-lg:col-span-2 max-lg:p-5 lg:py-5"
-        >
+        <li class="{% if sloop.last %}{% else %}border-b{% endif %} flex border-gray-300 pb-1.5 max-lg:p-5 lg:py-5">
           <svg class="fill-primary me-2 mt-1 flex-none" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
             <use xlink:href="#icon-simple-{{ item.icon }}"></use>
           </svg>
@@ -162,10 +158,10 @@
           <!-- Item -->
           <li class="{% if loop.last %}lg:bg-[#EDEEF4] lg:border-white lg:rounded-br-lg{% else %}{% endif %} lg:px-8">
             <div
-              class="{% if loop.last %}lg:border-white{% else %}{% endif %} grid h-full lg:place-content-center lg:border-b lg:py-4"
+              class="{% if loop.last %}lg:border-white{% else %}{% endif %} flex h-full lg:items-center lg:justify-center lg:border-b lg:py-4"
             >
               <span
-                class="{% if loop.last %}border-green-800{% else %}border-primary{% endif %} mb-4 border-b pb-4 text-center uppercase text-neutral-700 md:col-span-2 lg:hidden"
+                class="{% if loop.last %}border-green-800{% else %}border-primary{% endif %} mb-4 border-b pb-4 text-center uppercase text-neutral-700 lg:hidden"
               >
                 {{ PRODUCTS[loop.index - 1] }}
               </span>
