@@ -8,6 +8,7 @@ import { Pagination, Autoplay } from "swiper/modules";
 // import Swiper and modules styles
 import "swiper/css";
 import "swiper/css/pagination";
+import { getSiblings } from "./helpers/helpers";
 
 // init Swiper:
 const swiper = new Swiper(".swiper", {
@@ -35,4 +36,29 @@ const swiper = new Swiper(".swiper", {
     el: ".swiper-pagination",
     type: "bullets",
   },
+});
+
+document.querySelectorAll(".js-accordion").forEach((accordionWrapper) => {
+  [...accordionWrapper.children].forEach((accordionEl) => {
+    let buttonEl = accordionEl.querySelector("button");
+    let collapseEl = buttonEl.nextElementSibling;
+
+    let closestEls = getSiblings(accordionEl);
+
+    buttonEl.addEventListener("click", () => {
+      if (buttonEl.getAttribute("aria-expanded") === "true") {
+        buttonEl.setAttribute("aria-expanded", "false");
+      } else {
+        closestEls.forEach((closestEl) => {
+          let closestButtonEl = closestEl.querySelector("button");
+          let closestCollapseEl = closestButtonEl.nextElementSibling;
+          closestButtonEl.setAttribute("aria-expanded", "false");
+          closestCollapseEl.classList.remove("active");
+        });
+
+        buttonEl.setAttribute("aria-expanded", "true");
+      }
+      collapseEl.classList.toggle("active");
+    });
+  });
 });

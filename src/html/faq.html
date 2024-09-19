@@ -11,7 +11,7 @@
     </p>
 
     <!-- FAQ -->
-    <div class="flex w-full flex-col gap-4 py-10 lg:py-14">
+    <div class="js-accordion flex w-full flex-col gap-4 py-10 lg:py-14">
       <!-- Accordion -->
       {%
         for item in [
@@ -132,28 +132,31 @@
             aria-controls="collapse-{{ loopIndex }}"
           >
             {{ item.title }}
-            <span class="custom-gradient-primary flex size-8 items-center justify-center rounded-lg">
+            <span
+              class="custom-gradient-primary flex size-8 items-center justify-center rounded-lg group-hover:rotate-180"
+            >
               <svg class="flex-none" width="12" height="12" xmlns="http://www.w3.org/2000/svg">
-                <use xlink:href="#icon-{% if loop.first %}minus{% else %}plus{% endif %}"></use>
+                <use class="group-[&[aria-expanded=true]]:hidden" xlink:href="#icon-plus"></use>
+                <use class="group-[&[aria-expanded=false]]:hidden" xlink:href="#icon-minus"></use>
               </svg>
             </span>
           </button>
           <div
             id="collapse-{{ loopIndex }}"
-            class="{% if loop.first %}{% else %}hidden{% endif %} w-full overflow-hidden transition-[height] duration-300"
+            class="js-accordion accordion-content {% if loop.first %}active{% else %}{% endif %}"
             role="region"
             aria-labelledby="heading-{{ loopIndex }}"
           >
             {% for child in item.child %}
               <div class="border-b py-4" id="heading-loopIndex-{{ loop.index }}">
                 <button
-                  class="{% if loop.first %}text-primary font-bold mb-4{% else %}{% endif %} group inline-flex w-full items-center justify-between gap-x-3 rounded-lg text-start transition"
+                  class="[&[aria-expanded=true]]:text-primary group inline-flex w-full items-center justify-between gap-x-3 rounded-lg text-start font-bold transition"
                   aria-expanded="{% if loop.first %}true{% else %}false{% endif %}"
                   aria-controls="collapse-loopIndex-{{ loop.index }}"
                 >
                   {{ child.title }}
                   <svg
-                    class="{% if loop.first %}rotate-180{% endif %} flex-none"
+                    class="flex-none group-[&[aria-expanded=true]]:rotate-180"
                     width="12"
                     height="12"
                     xmlns="http://www.w3.org/2000/svg"
@@ -163,11 +166,11 @@
                 </button>
                 <div
                   id="collapse-loopIndex-{{ loop.index }}"
-                  class="{% if loop.first %}{% else %}hidden{% endif %} w-full overflow-hidden px-3 pt-3 text-sm transition-[height] duration-300"
+                  class="{% if loop.first %}active{% else %}{% endif %} accordion-content text-sm"
                   role="region"
                   aria-labelledby="heading-loopIndex-{{ loop.index }}"
                 >
-                  {{ child.text }}
+                  <div class="mt-3 rounded-xl bg-gray-100 p-4">{{ child.text }}</div>
                 </div>
               </div>
             {% endfor %}
