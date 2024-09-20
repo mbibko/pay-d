@@ -137,7 +137,9 @@
       <!-- List -->
       <ul class="features-table-row rounded-xl max-lg:bg-[#EDEEF4] max-lg:pb-4">
         <!-- Item -->
-        <li class="{% if sloop.last %}{% else %}border-b{% endif %} flex border-gray-300 pb-1.5 max-lg:p-5 lg:py-5">
+        <li
+          class="{% if loop.last %}opacity-0{% else %}border-b{% endif %} flex border-gray-300 pb-1.5 max-lg:p-5 lg:py-5"
+        >
           <svg class="fill-primary me-2 mt-1 flex-none" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
             <use xlink:href="#icon-simple-{{ item.icon }}"></use>
           </svg>
