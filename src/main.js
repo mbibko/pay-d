@@ -4,37 +4,39 @@ import "virtual:svg-icons-register";
 
 // core version + navigation, pagination modules:
 import Swiper from "swiper";
-import { Pagination, Autoplay } from "swiper/modules";
+import { Pagination, Autoplay, Navigation } from "swiper/modules";
 // import Swiper and modules styles
 import "swiper/css";
-import "swiper/css/pagination";
+import "swiper/css/navigation";
 import { getSiblings } from "./helpers/helpers";
 
 // init Swiper:
-const swiper = new Swiper(".swiper", {
+const swiper = new Swiper(".js-hero-bottom-slider", {
   // configure Swiper to use modules
-  modules: [Pagination, Autoplay],
+  modules: [Navigation, Autoplay],
   // autoplay: {
   //   delay: 7500
   // },
+  slidesPerView: 1,
+  spaceBetween: 20,
   speed: 500,
   breakpoints: {
     640: {
-      slidesPerView: 2,
+      slidesPerView: 4,
       spaceBetween: 20,
     },
-    1000: {
-      slidesPerView: 3,
-      spaceBetween: 30,
-    },
-    1600: {
-      slidesPerView: 4,
-      spaceBetween: 40,
-    },
+    // 1024: {
+    //   slidesPerView: 3,
+    //   spaceBetween: 30,
+    // },
+    // 1536: {
+    //   slidesPerView: 4,
+    //   spaceBetween: 40,
+    // },
   },
-  pagination: {
-    el: ".swiper-pagination",
-    type: "bullets",
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
   },
 });
 

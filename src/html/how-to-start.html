@@ -8,7 +8,7 @@
       </h2>
     </div>
 
-    <div class="mx-auto flex max-w-[67rem] gap-8">
+    <div class="mx-auto max-w-[67rem] lg:flex">
       {%
         for item in [
         {
@@ -52,7 +52,7 @@
         </div>
 
         {% if loop.last !== true %}
-          <svg class="flex-none self-center" width="44" height="14" xmlns="http://www.w3.org/2000/svg">
+          <svg class="flex-1 self-center" width="44" height="14" xmlns="http://www.w3.org/2000/svg">
             <use xlink:href="#icon-arrow-dotted"></use>
           </svg>
         {% endif %}

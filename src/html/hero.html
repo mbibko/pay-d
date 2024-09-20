@@ -1,36 +1,37 @@
-<section class="mb-20">
-  <div class="container py-8 lg:flex">
+<section class="pb-16">
+  <div class="container pb-4 pt-12 lg:flex">
     <!--  IMG  -->
-    <div class="relative flex-none lg:order-1">
+    <div class="relative flex-none md:mr-0 lg:order-1 lg:mr-10 lg:max-h-[480px] xl:mr-0">
       <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
         <div
-          style="background: url('/img/bg/hero-shape2.svg') 77% 24% no-repeat"
+          style="background: url('/img/bg/hero-shape2.svg') 77% 29% no-repeat"
           class="flex size-[1500px] items-center justify-center"
         ></div>
       </div>
-      <img class="relative" width="433" height="555" src="/img/hero-img.png" alt="mockup" />
+      <img class="relative mx-auto" width="433" height="555" src="/img/hero-img.png" alt="mockup" />
     </div>
     <!-- END IMG  -->
     <!-- CONTENT  -->
-    <div class="mr-auto place-self-center">
-      <div class="mb-20">
-        <h1 class="mb-4 max-w-2xl font-light"><strong class="font-bold">TFS In-house</strong> Payment&nbsp;solution</h1>
-        <p class="text-gray-primary mb-6 max-w-2xl font-mono font-light md:text-lg lg:mb-8 lg:text-xl">
-          Integrated online payment <br />
-          solution for your business.
-        </p>
-        <a href="#" class="btn btn-primary pr-3">
-          CONTACT US
-          <svg class="ms-5 flex-none fill-white" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-            <use xlink:href="#icon-arr"></use>
-          </svg>
-        </a>
-      </div>
-      <div class="items-center gap-10 lg:flex">
-        <span class="text-gray-primary font-medium leading-4"
-          >Frequently used <br />
-          payment methods:</span
-        >
+    <div class="relative z-10 flex flex-col items-center place-self-center max-lg:text-center lg:items-start">
+      <h1 class="mb-4 font-light"><strong class="font-bold">TFS&nbsp;In&#8209;house</strong> Payment solution</h1>
+      <p class="text-gray-primary mb-6 max-w-2xl font-mono font-light md:text-lg lg:mb-8 lg:text-xl">
+        Integrated online payment <br />
+        solution for your business.
+      </p>
+      <a href="#" class="btn btn-primary pr-3">
+        CONTACT US
+        <svg class="ms-5 flex-none fill-white" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+          <use xlink:href="#icon-arr"></use>
+        </svg>
+      </a>
+      <div class="mt-8 items-center gap-10 lg:mt-20 xl:flex">
+        <div class="text-gray-primary font-medium leading-4 max-xl:mb-3">
+          <span class="hidden lg:block"
+            >Frequently used <br />
+            payment methods:</span
+          >
+          <span class="lg:hidden">We provide</span>
+        </div>
         <div class="flex gap-2">
           {% for item in ["amex", "apple-pay", "g-pay", "mastercard", "paypal", "visa"] %}
             <svg width="60" height="38" xmlns="http://www.w3.org/2000/svg">
@@ -42,16 +43,23 @@
     </div>
     <!-- END CONTENT  -->
   </div>
-  <div class="container -mt-7 pb-10">
+  <div class="container">
     <hr class="border-primary mb-10 max-w-[820px] opacity-20" />
-    <!--    0D2285-->
-    <div class="gap-1 pl-8 lg:flex">
-      {% for item in ["Safe, reliable <br> and easy to use", "Control & ownership <br> of customer data", "Easy API-based setup & onboarding", "Secure &<br> compliant"] %}
-        <div class="text-primary flex flex-1 items-center gap-5 font-medium leading-4 last:pl-12">
-          <img height="68" class="h-[68px] flex-none" src="/img/features/{{ loop.index }}.png" alt="icon" />
-          <span> {{ item | safe }} </span>
+    <div class="max-w-[1140px] lg:pl-8">
+      <div class="js-hero-bottom-slider swiper">
+        <div class="swiper-wrapper">
+          {% for item in ["Safe, reliable <br> and easy to use", "Control & ownership <br> of customer data", "Easy API-based setup & onboarding", "Secure &<br> compliant"] %}
+            <div class="swiper-slide last:pl-12">
+              <div class="text-primary flex flex-1 items-center gap-5 font-medium leading-4">
+                <img height="68" class="h-[68px] flex-none" src="/img/features/{{ loop.index }}.png" alt="icon" />
+                <span> {{ item | safe }} </span>
+              </div>
+            </div>
+          {% endfor %}
         </div>
-      {% endfor %}
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
     </div>
   </div>
 </section>

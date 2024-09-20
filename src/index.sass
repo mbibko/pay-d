@@ -38,12 +38,38 @@
   .border-color
     border-color: rgba(39, 61, 166, 0.20)
 
-  .features-table-row
+  .features-header-table-row, .features-table-row
     @apply flex
     & > *
       @apply w-[calc(100%/3)] flex-none
     & > :first-child
       @apply mr-4
+    & > :nth-child(2)
+      @apply lg:bg-white
+      & > *
+        @apply lg:border-b border-[#E1E5EF]
+    & > :nth-child(3)
+      @apply lg:bg-[#EDEEF4]
+      & > *
+        @apply lg:border-b lg:border-white
+  .features-header-table-row
+    & > :nth-child(3)
+      @apply lg:rounded-tr-xl
+
+  .features-table-row
+    & > :nth-child(1)
+      @apply border-b border-gray-300
+    & > :nth-child(3)
+      @apply max-lg:border-l-2
+    &:last-of-type
+      & > * > *
+        @apply border-0
+      & > :last-child
+        @apply lg:rounded-br-xl
+      & > :nth-child(2)
+        @apply lg:rounded-bl-xl
+
+
 
 
 
