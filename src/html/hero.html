@@ -1,5 +1,17 @@
 <section class="mb-20">
-  <div class="container flex py-8">
+  <div class="container py-8 lg:flex">
+    <!--  IMG  -->
+    <div class="relative flex-none lg:order-1">
+      <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div
+          style="background: url('/img/bg/hero-shape2.svg') 77% 24% no-repeat"
+          class="flex size-[1500px] items-center justify-center"
+        ></div>
+      </div>
+      <img class="relative" width="433" height="555" src="/img/hero-img.png" alt="mockup" />
+    </div>
+    <!-- END IMG  -->
+    <!-- CONTENT  -->
     <div class="mr-auto place-self-center">
       <div class="mb-20">
         <h1 class="mb-4 max-w-2xl font-light"><strong class="font-bold">TFS In-house</strong> Payment&nbsp;solution</h1>
@@ -14,7 +26,7 @@
           </svg>
         </a>
       </div>
-      <div class="flex items-center gap-10">
+      <div class="items-center gap-10 lg:flex">
         <span class="text-gray-primary font-medium leading-4"
           >Frequently used <br />
           payment methods:</span
@@ -28,14 +40,12 @@
         </div>
       </div>
     </div>
-    <div class="flex-none">
-      <img width="407" height="531" src="/img/hero-img.png" alt="mockup" />
-    </div>
+    <!-- END CONTENT  -->
   </div>
   <div class="container -mt-7 pb-10">
     <hr class="border-primary mb-10 max-w-[820px] opacity-20" />
     <!--    0D2285-->
-    <div class="flex gap-1 pl-8">
+    <div class="gap-1 pl-8 lg:flex">
       {% for item in ["Safe, reliable <br> and easy to use", "Control & ownership <br> of customer data", "Easy API-based setup & onboarding", "Secure &<br> compliant"] %}
         <div class="text-primary flex flex-1 items-center gap-5 font-medium leading-4 last:pl-12">
           <img height="68" class="h-[68px] flex-none" src="/img/features/{{ loop.index }}.png" alt="icon" />

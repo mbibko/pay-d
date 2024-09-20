@@ -39,9 +39,13 @@
     border-color: rgba(39, 61, 166, 0.20)
 
   .features-table-row
-    @apply flex gap-4
+    @apply flex
     & > *
       @apply w-[calc(100%/3)] flex-none
+    & > :first-child
+      @apply mr-4
+
+
 
 
 @layer utilities

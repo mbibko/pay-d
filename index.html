@@ -1,15 +1,16 @@
 {% extends "src/html/layout.html" %}
 {% block content %}
-  <div class="bg-[url('/img/bg/hero-section.jpg')] bg-cover">
+  <div class="overflow-hidden" style="background: url('/img/bg/hero-bg.jpg') 0 0 / 100% auto no-repeat">
     {% include "src/html/header.html" %}
     {% include "src/html/hero.html" %}
   </div>
   {% include "src/html/how-it-works.html" %}
   {% include "src/html/features.html" %}
 
-  <div
-    class="relative after:pointer-events-none after:absolute after:inset-0 after:size-full after:bg-[url('/img/bg/decor-elements.png')] after:bg-[length:100%_auto] after:content-['']"
-  >
+  <div class="relative overflow-hidden">
+    <div class="container pointer-events-none absolute inset-0 mx-auto h-full">
+      <div style="background: url('/img/bg/mockups-shape.svg') 0 95px no-repeat" class="h-full w-[10000px]"></div>
+    </div>
     {% include "src/html/mockups.html" %}
     {% include "src/html/how-to-start.html" %}
   </div>

@@ -1,60 +1,62 @@
-<section class="container relative z-10 pb-56 pt-20">
-  <div class="mx-auto flex max-w-[30rem] flex-col items-center">
-    <span class="btn btn-secondary btn-sm mb-4">Start</span>
+<section class="bg-[#f9f9fa] pb-20 pt-20">
+  <div class="container relative z-10">
+    <div class="mx-auto flex max-w-[30rem] flex-col items-center">
+      <span class="btn btn-secondary btn-sm mb-4 uppercase">Start</span>
 
-    <h2 class="h1 mb-10 text-center font-light">
-      <span class="text-balance font-bold">How to start with Pay-D</span>
-    </h2>
-  </div>
+      <h2 class="h1 mb-10 text-center font-light">
+        <span class="text-balance font-bold">How to start with Pay-D</span>
+      </h2>
+    </div>
 
-  <div class="flex gap-8">
-    {%
-      for item in [
-      {
-      title: "Finding a solution",
-      text: 'Let\'s discuss your individual  requirements to understand your goals. If possible, please complete the following <span class="underline">questionnaire</span> and email it to us directly.'
-      },
-      {
-      title: "Integration & onboarding",
-      text: 'Integrate our payment page and APIs seamlessly into your system. Complete <a class="underline text-primary" href="#">merchant onboarding</a> to start receiving payments.'
-      },
-      {
-      title: "Receive payments",
-      text: "Begin accepting payments easily and securely online, offering your customers a seamless experience. "
-      }
-      ]
-    %}
-      <div
-        class="{% if loop.first %}custom-gradient-primary text-white{% else %}text-neutral-700{% endif %} border-color relative flex w-[290px] flex-none flex-col gap-5 rounded-2xl border bg-white px-7 pb-5 pt-8 shadow-[0_0_12px_0_rgba(0,0,0,0.10)]"
-      >
-        <div class="flex justify-between">
-          <img height="40" class="h-[40px] flex-none" src="/img/features/{{ loop.index + 4 }}.png" alt="icon" />
-          <span class="{% if loop.first %}text-white{% else %}text-primary{% endif %} font-mono text-4xl opacity-40"
-            >{{ loop.index }}</span
-          >
-        </div>
+    <div class="mx-auto flex max-w-[67rem] gap-8">
+      {%
+        for item in [
+        {
+        title: "Finding a solution",
+        text: 'Let\'s discuss your individual  requirements to understand your goals. If possible, please complete the following <span class="underline">questionnaire</span> and email it to us directly.'
+        },
+        {
+        title: "Integration & onboarding",
+        text: 'Integrate our payment page and APIs seamlessly into your system. Complete <a class="underline text-primary" href="#">merchant onboarding</a> to start receiving payments.'
+        },
+        {
+        title: "Receive payments",
+        text: "Begin accepting payments easily and securely online, offering your customers a seamless experience. "
+        }
+        ]
+      %}
         <div
-          class="{% if loop.first %}text-white{% else %}text-primary{% endif %} font-mono text-lg font-bold leading-tight"
+          class="{% if loop.first %}custom-gradient-primary text-white{% else %}text-neutral-700{% endif %} border-color relative flex w-[290px] flex-none flex-col rounded-2xl border bg-white px-7 pb-7 pt-7 shadow-[0_0_12px_0_rgba(0,0,0,0.10)]"
         >
-          {{ item.title }}
-        </div>
-        <span class="text-sm leading-tight">{{ item.text | safe }}</span>
-        {% if loop.first %}
-          <div
-            class="custom-gradient-secondary absolute bottom-0 left-1/2 z-10 flex size-[40px] -translate-x-2/4 translate-y-2/4 place-items-center rounded-full"
-          >
-            <svg class="m-auto flex-none fill-white" width="18" height="14" xmlns="http://www.w3.org/2000/svg">
-              <use xlink:href="#icon-simple-email-r"></use>
-            </svg>
+          <div class="mb-6 flex justify-between">
+            <img height="40" class="h-[40px] flex-none" src="/img/features/{{ loop.index + 4 }}.png" alt="icon" />
+            <span class="{% if loop.first %}text-white{% else %}text-primary{% endif %} font-mono text-4xl opacity-40"
+              >{{ loop.index }}</span
+            >
           </div>
-        {% endif %}
-      </div>
+          <div
+            class="{% if loop.first %}text-white{% else %}text-primary{% endif %} mb-4 font-mono text-lg font-bold leading-tight"
+          >
+            {{ item.title }}
+          </div>
+          <span class="text-sm leading-tight">{{ item.text | safe }}</span>
+          {% if loop.first %}
+            <div
+              class="custom-gradient-secondary absolute bottom-0 left-1/2 z-10 flex size-[40px] -translate-x-2/4 translate-y-2/4 place-items-center rounded-full"
+            >
+              <svg class="m-auto flex-none fill-white" width="18" height="14" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="#icon-simple-email-r"></use>
+              </svg>
+            </div>
+          {% endif %}
+        </div>
 
-      {% if loop.last !== true %}
-        <svg class="flex-none self-center" width="44" height="14" xmlns="http://www.w3.org/2000/svg">
-          <use xlink:href="#icon-arrow-dotted"></use>
-        </svg>
-      {% endif %}
-    {% endfor %}
+        {% if loop.last !== true %}
+          <svg class="flex-none self-center" width="44" height="14" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="#icon-arrow-dotted"></use>
+          </svg>
+        {% endif %}
+      {% endfor %}
+    </div>
   </div>
 </section>

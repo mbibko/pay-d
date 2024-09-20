@@ -1,7 +1,7 @@
 {% set PRODUCTS = [Standard, Advanced] %}
 
 <!-- Comparison Table -->
-<div class="relative mb-10 max-lg:gap-6">
+<div class="relative max-lg:gap-6">
   <!-- Header -->
   <!-- TODO check lg:sticky -->
   <div class="start-0 top-0 lg:block">
@@ -156,7 +156,7 @@
 
         {% for field in item.data %}
           <!-- Item -->
-          <li class="{% if loop.last %}lg:bg-[#EDEEF4] lg:border-white lg:rounded-br-lg{% else %}{% endif %} lg:px-8">
+          <li class="{% if loop.last %}lg:bg-[#EDEEF4] lg:border-white{% else %}lg:bg-white{% endif %} lg:px-4">
             <div
               class="{% if loop.last %}lg:border-white{% else %}{% endif %} flex h-full lg:items-center lg:justify-center lg:border-b lg:py-4"
             >
@@ -165,7 +165,7 @@
               >
                 {{ PRODUCTS[loop.index - 1] }}
               </span>
-              <span class="text-center text-sm text-neutral-700">
+              <div class="text-center text-sm text-neutral-700">
                 {% if field === "y" %}
                   <svg class="fill-primary ms-2" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
                     <use xlink:href="#icon-mark"></use>
@@ -177,7 +177,7 @@
                 {% else %}
                   {{ field | safe }}
                 {% endif %}
-              </span>
+              </div>
             </div>
           </li>
           <!-- End Item -->
