@@ -21,18 +21,18 @@ const swiper = new Swiper(".js-hero-bottom-slider", {
   spaceBetween: 20,
   speed: 500,
   breakpoints: {
-    640: {
-      slidesPerView: 4,
-      spaceBetween: 20,
-    },
+    // 640: {
+    //   slidesPerView: 4,
+    //   spaceBetween: 20,
+    // },
     // 1024: {
     //   slidesPerView: 3,
     //   spaceBetween: 30,
     // },
-    // 1536: {
-    //   slidesPerView: 4,
-    //   spaceBetween: 40,
-    // },
+    1280: {
+      slidesPerView: 4,
+      spaceBetween: 40,
+    },
   },
   navigation: {
     nextEl: ".swiper-button-next",

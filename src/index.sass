@@ -41,26 +41,39 @@
   .features-header-table-row, .features-table-row
     @apply flex
     & > *
-      @apply w-[calc(100%/3)] flex-none
+      //@apply w-[calc(100%/3)] flex-none
+      @apply flex-1
     & > :first-child
-      @apply mr-4
+      @apply w-[40%] mr-4 flex-none
     & > :nth-child(2)
       @apply lg:bg-white
       & > *
         @apply lg:border-b border-[#E1E5EF]
     & > :nth-child(3)
-      @apply lg:bg-[#EDEEF4]
+      @apply lg:bg-[#EDEEF4] max-lg:border-l-2
       & > *
         @apply lg:border-b lg:border-white
   .features-header-table-row
+    & > :nth-child(2)
+      & > :first-child
+        @apply lg:custom-gradient-primary
     & > :nth-child(3)
       @apply lg:rounded-tr-xl
+      & > :first-child
+        @apply lg:custom-gradient-secondary
 
   .features-table-row
+    @apply max-lg:mb-4 max-lg:flex-wrap
     & > :nth-child(1)
-      @apply border-b border-gray-300
+      @apply max-lg:w-full border-b border-gray-300
+    & > :nth-child(2)
+      .features-table-mobile-title
+        @apply border-primary
+
     & > :nth-child(3)
       @apply max-lg:border-l-2
+      .features-table-mobile-title
+        @apply border-green-800
     &:last-of-type
       & > * > *
         @apply border-0
@@ -69,6 +82,8 @@
       & > :nth-child(2)
         @apply lg:rounded-bl-xl
 
+  .features-table-mobile-title
+    @apply mb-4 border-b pb-4 text-center uppercase text-neutral-700 lg:hidden
 
 
 

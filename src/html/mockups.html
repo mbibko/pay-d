@@ -2,17 +2,43 @@
 
 <div style="background: #E6E8ED url('/img/bg/mockups-bg.svg') 0 0 / cover no-repeat" class="pb-6">
   <div class="container">
-    <div class="relative top-20 items-center justify-center lg:flex">
+    <div class="relative top-20 flex max-lg:flex-wrap lg:items-center lg:justify-center">
       <div class="relative mt-11 flex-none self-start">
-        {{ popover("Billing and <br> Invoicing", "w-[150px] left-[30px] top-[-35px]") }}
+        {{
+          popover(
+          {
+            title: "Billing and <br> Invoicing",
+            className: "w-[150px] left-[30px] top-[-35px]",
+            arrPos: "bottom"
+          })
+        }}
         <img width="330" class="" src="/img/mockups/1.png" alt="mockups" />
       </div>
-      <div class="relative z-10 flex-none">
-        {{ popover("Access to <br> Analytics & <br> Reporting", "w-[200px] left-[20%] top-[-50px]") }}
-        <div class="-me-[60px] -ms-[60px]"><img width="484" src="/img/mockups/2.png" alt="mockups" /></div>
+      <div
+        class="relative z-10 flex w-[484px] flex-none max-lg:left-10 max-lg:-mt-80 max-lg:ml-auto lg:-ml-[60px] lg:-mr-[60px]"
+      >
+        {{
+          popover(
+          {
+          title: "Access to <br> Analytics & <br> Reporting",
+          className: "max-lg:text-center w-[200px] left-14 lg:left-[20%] top-[-50px]",
+          arrPos: "bottom"
+          })
+        }}
+        <div class="">
+          <img width="484" src="/img/mockups/2.png" alt="mockups" />
+        </div>
       </div>
-      <div class="relative flex-none">
-        {{ popover("Customisable <br> payment <br> page", "w-[175px] right-0 top-[-100px]") }}
+      <div class="relative z-10 flex-none">
+        {{
+          popover(
+          {
+          title: "Customisable <br> payment <br> page",
+          className: "w-[175px] left-full lg:left-8 top-20 max-lg:ml-8 lg:top-[-100px]",
+          arrPos: "bottom",
+          arrClassName: "max-lg:left-0 max-lg:top-1/2 -translate-x-[22px] max-lg:rotate-90"
+          })
+        }}
         <img width="209" class="" src="/img/mockups/3.png" alt="mockups" />
       </div>
     </div>

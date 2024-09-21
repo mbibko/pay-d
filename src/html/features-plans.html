@@ -1,4 +1,4 @@
-{% set PRODUCTS = [Standard, Advanced] %}
+{% set PRODUCTS = ["Standard", "Advanced"] %}
 
 <!-- Comparison Table -->
 <div class="relative max-lg:gap-6">
@@ -24,10 +24,8 @@
         }
         ]
       %}
-        <div class="px-3">
-          <div
-            class="{% if loop.last %}custom-gradient-secondary{% else %}custom-gradient-primary{% endif %} relative rounded-xl py-3 lg:-top-8 lg:-mb-5 lg:px-2 lg:text-white"
-          >
+        <div class="px-3 py-3.5">
+          <div class="relative rounded-xl py-3 lg:mb-3 lg:px-2 lg:text-white">
             <div
               class="{% if loop.last %}border-green-800{% else %}border-primary{% endif %} text-center font-mono text-xl font-bold max-lg:border-b-2 max-lg:uppercase"
             >
@@ -35,7 +33,9 @@
             </div>
             <p class="mt-2 text-balance text-sm max-lg:font-bold lg:text-center">{{ item.integration }}</p>
           </div>
-          <p class="min-h-[90px] text-sm leading-tight text-neutral-700 lg:border-b lg:pb-5 lg:text-center">
+          <p
+            class="min-h-[90px] text-balance text-sm leading-tight text-neutral-700 lg:border-b lg:pb-5 lg:text-center"
+          >
             {{ item.text }}
           </p>
         </div>
@@ -151,21 +151,19 @@
       {% for field in item.data %}
         <!-- Item -->
         <li class="lg:px-4">
-          <div class="flex h-full lg:items-center lg:justify-center lg:py-4">
-            <span
-              class="{% if loop.last %}border-green-800{% else %}border-primary{% endif %} mb-4 border-b pb-4 text-center uppercase text-neutral-700 lg:hidden"
-            >
-              {{ PRODUCTS[loop.index - 1] }}
-            </span>
+          <div class="flex h-full max-lg:flex-col lg:items-center lg:justify-center lg:py-4">
+            <span class="features-table-mobile-title"> {{ PRODUCTS[loop.index - 1] }} </span>
             <div class="text-center text-sm text-neutral-700">
               {% if field === "y" %}
-                <svg class="fill-primary ms-2" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                <svg class="fill-primary mx-auto" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
                   <use xlink:href="#icon-mark"></use>
                 </svg>
+                <span class="lg:hidden">included</span>
                 {% elseif field === "x" %}
-                <svg class="fill-primary ms-2" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                <svg class="fill-primary mx-auto" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
                   <use xlink:href="#icon-close"></use>
                 </svg>
+                <span class="lg:hidden">not included</span>
               {% else %}
                 {{ field | safe }}
               {% endif %}

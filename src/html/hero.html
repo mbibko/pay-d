@@ -50,15 +50,17 @@
         <div class="swiper-wrapper">
           {% for item in ["Safe, reliable <br> and easy to use", "Control & ownership <br> of customer data", "Easy API-based setup & onboarding", "Secure &<br> compliant"] %}
             <div class="swiper-slide last:pl-12">
-              <div class="text-primary flex flex-1 items-center gap-5 font-medium leading-4">
+              <div
+                class="text-primary flex flex-1 flex-col items-center justify-center gap-5 font-medium leading-4 lg:flex-row"
+              >
                 <img height="68" class="h-[68px] flex-none" src="/img/features/{{ loop.index }}.png" alt="icon" />
-                <span> {{ item | safe }} </span>
+                <span class="max-lg:text-center"> {{ item | safe }} </span>
               </div>
             </div>
           {% endfor %}
         </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev bg-[url('/img/svg/arr-prev.svg')] bg-center bg-no-repeat after:hidden"></div>
+        <div class="swiper-button-next bg-[url('/img/svg/arr-next.svg')] bg-center bg-no-repeat after:hidden"></div>
       </div>
     </div>
   </div>

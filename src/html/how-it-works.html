@@ -4,9 +4,15 @@
     <h2 class="h1 mb-16 text-center">
       <strong class="text-balance font-bold">We enable your business</strong> to&nbsp;receive online payments
     </h2>
-    <div class="justify-center lg:flex">
-      <div class="relative mt-36 pt-6">
-        <svg class="text-primary absolute -top-10 left-1/2" width="172" height="48" xmlns="http://www.w3.org/2000/svg">
+    <div class="flex flex-col flex-wrap justify-center max-lg:items-center lg:flex-row">
+      <!--  Item    -->
+      <div class="relative mt-36 pt-6 max-lg:mb-10">
+        <svg
+          class="text-primary absolute -top-10 left-1/2 hidden lg:block"
+          width="172"
+          height="48"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <use xlink:href="#icon-mockups-dash-line-1"></use>
         </svg>
         <div
@@ -21,7 +27,14 @@
             Customer
           </div>
         </div>
+        <div class="relative mx-auto w-[13px]">
+          <div class="absolute left-6 top-1 text-sm font-bold uppercase text-[#5D5D5D]">Buys product</div>
+          <svg class="text-primary lg:hidden" width="13" height="48" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="#icon-arrow-dotted-bottom"></use>
+          </svg>
+        </div>
       </div>
+      <!--  Item    -->
       <div
         class="before:custom-gradient-primary before mx-40 flex-none text-center before:-top-8 before:left-1/2 before:size-[340px] before:-translate-x-1/2 before:rounded-full"
       >
@@ -42,7 +55,7 @@
             <use xlink:href="#icon-mockups-dash-line-2"></use>
           </svg>
           <svg
-            class="text-secondary absolute bottom-1/2 left-full ml-1"
+            class="text-secondary absolute bottom-1/2 left-full ml-1 hidden lg:block"
             width="301"
             height="383"
             xmlns="http://www.w3.org/2000/svg"
@@ -52,9 +65,18 @@
           <svg class="flex-none" width="60" height="38" xmlns="http://www.w3.org/2000/svg">
             <use xlink:href="#icon-logo-mark"></use>
           </svg>
+          <svg
+            class="text-secondary absolute left-full top-1/2 ml-1 lg:hidden"
+            width="126"
+            height="635"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <use xlink:href="#icon-mockups-dash-line-4"></use>
+          </svg>
         </div>
       </div>
-      <div class="relative mt-40">
+      <!--  Item    -->
+      <div class="relative order-2 mt-40">
         <div
           style="background: linear-gradient(291deg, #3C3 -18.14%, #309F52 93.59%)"
           class="mockup-circle size-[176px]"
@@ -68,7 +90,9 @@
           </div>
         </div>
       </div>
+      <!-- Item -->
+      <div class="order-1 w-full lg:order-2">{% include "src/html/payment-processing.html" %}</div>
     </div>
-    {% include "src/html/payment-processing.html" %}
+    <!--    -->
   </div>
 </section>
