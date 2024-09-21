@@ -1,16 +1,7 @@
 <section style="background: #F9F9FA url('/img/bg/features.svg') 100% 0 / 100% auto no-repeat" class="pb-20 pt-[5rem]">
   <div class="container">
     <div class="mx-auto max-w-[1060px]">
-      <div class="mb-16 flex flex-col items-center">
-        <span class="btn btn-secondary btn-sm mb-4 uppercase">Products</span>
-
-        <h2 class="h1 mb-10 text-center font-light">
-          <span class="text-balance font-bold"
-            >How you can use <br />
-            our features</span
-          >
-        </h2>
-      </div>
+      {{ section.header('How you can use <br />our features', "Products", "mb-20") }}
       {% include "src/html/features-plans.html" %}
     </div>
   </div>
