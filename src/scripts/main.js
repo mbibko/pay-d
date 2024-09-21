@@ -1,5 +1,3 @@
-// import "./index.css";
-import "./index.sass";
 import "virtual:svg-icons-register";
 
 // core version + navigation, pagination modules:
@@ -8,7 +6,7 @@ import { Pagination, Autoplay, Navigation } from "swiper/modules";
 // import Swiper and modules styles
 import "swiper/css";
 import "swiper/css/navigation";
-import { getSiblings } from "./helpers/helpers";
+import { getSiblings } from "../helpers/helpers.js";
 
 // init Swiper:
 const swiper = new Swiper(".js-hero-bottom-slider", {

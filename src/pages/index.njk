@@ -1,0 +1,24 @@
+{% import "./components/elements/titles.njk" as titles %}
+{% import "./components/elements/buttons.njk" as buttons %}
+{% import "./components/elements/section.njk" as section %}
+{% include 'layouts/main.njk' %}
+
+<div
+  class="overflow-hidden bg-[url('/img/bg/hero-bg2-mobile.jpg')] bg-[length:1575px_688px] bg-no-repeat lg:bg-[url('/img/bg/hero-bg.jpg')] lg:bg-[length:100%_auto]"
+>
+  {% include "./components/header.njk" %}
+  {% include "./components/hero.njk" %}
+</div>
+{% include "./components/how-it-works.njk" %}
+{% include "./components/features.njk" %}
+
+<div class="relative overflow-hidden">
+  <div class="container pointer-events-none absolute inset-0 mx-auto h-full">
+    <div style="background: url('/img/bg/mockups-shape.svg') 0 95px no-repeat" class="h-full w-[10000px]"></div>
+  </div>
+  {% include "./components/mockups.njk" %}
+  {% include "./components/how-to-start.njk" %}
+</div>
+{% include "./components/get-in-touch.njk" %}
+{% include "./components/faq.njk" %}
+{% include "./components/footer.njk" %}
