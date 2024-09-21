@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container relative z-10">
   <header class="flex items-center justify-between gap-x-8 py-4 lg:h-24">
     <div class="flex items-center">
       <div>
@@ -26,14 +26,19 @@
           <a href="#">Downloads</a>
         </li>
       </menu>
-      <a href="#" class="btn btn-primary btn-sm">
+      <a href="#" class="btn btn-primary btn-sm max-lg:hidden">
         CONTACT US
         <svg class="ms-2 fill-white" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
           <use xlink:href="#icon-arr"></use>
         </svg>
       </a>
     </div>
-    <div class="flex lg:hidden">
+    <div class="flex gap-5 lg:hidden">
+      <a href="#" class="custom-gradient-primary btn btn-sm w-[52px] justify-center text-center lg:hidden">
+        <svg class="fill-white" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+          <use xlink:href="#icon-user2"></use>
+        </svg>
+      </a>
       <button
         onclick="document.getElementById('mobile-nav').classList.toggle('hidden');"
         type="button"
