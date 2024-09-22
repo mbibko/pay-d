@@ -10,15 +10,16 @@
   {% include "./components/hero.njk" %}
 </div>
 {% include "./components/how-it-works.njk" %}
-{% include "./components/features.njk" %}
-
-<div class="relative overflow-hidden">
-  <div class="container pointer-events-none absolute inset-0 mx-auto h-full">
-    <div style="background: url('/img/bg/mockups-shape.svg') 0 95px no-repeat" class="h-full w-[10000px]"></div>
+<div class="overflow-hidden">
+  {% include "./components/features.njk" %}
+  <div class="relative">
+    <div class="container pointer-events-none absolute inset-0 hidden h-full lg:block">
+      <div class="h-full bg-[url('/img/bg/mockups-shape.svg')] bg-[0_95px] bg-no-repeat lg:w-[10000px]"></div>
+    </div>
+    {% include "./components/mockups.njk" %}
+    {% include "./components/how-to-start.njk" %}
   </div>
-  {% include "./components/mockups.njk" %}
-  {% include "./components/how-to-start.njk" %}
+  {% include "./components/get-in-touch.njk" %}
 </div>
-{% include "./components/get-in-touch.njk" %}
 {% include "./components/faq.njk" %}
 {% include "./components/footer.njk" %}

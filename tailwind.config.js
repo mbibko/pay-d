@@ -5,9 +5,9 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      padding: "2rem", // 32px
+      padding: "1.625rem", // 26px
       screens: {
-        "2xl": "1210px", // Adjust as needed for extra extra large screens
+        "2xl": "1198px", // Adjust as needed for extra extra large screens
       },
     },
     fontFamily: {

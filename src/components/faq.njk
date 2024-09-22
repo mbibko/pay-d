@@ -1,14 +1,18 @@
-<section style="background: #F9F9FA url('/img/bg/faq.svg') 0 50% / 100% auto no-repeat" class="pb-8 pt-[5rem]">
-  <div class="container flex max-w-[800px] flex-col items-center">
-    {{ section.header('Questions & answers', "Frequently asked questions", "mb-4") }}
+<section
+  class="bg-[#F9F9FA] bg-[url('/img/bg/faq-bg-mobile.svg')] bg-[length:100%_auto] bg-no-repeat pb-8 pt-[5rem] lg:bg-[url('/img/bg/faq.svg')] lg:bg-[0%_50%]"
+>
+  <div class="container max-w-[600px] flex lg:max-w-[800px] flex-col items-center">
+    <div class="mb-14">
+      {{ section.header('Questions&nbsp;& answers', "Frequently asked questions", "lg:mb-4") }}
 
-    <p class="text-[#343434]">
-      If the question you are looking for is not listed below, feel free to ask our
-      <a href="#" class="text-primary font-bold underline">service team</a>.
-    </p>
+      <p class="text-center text-[#343434]">
+        If the question you are looking for is not listed below, feel free to ask our
+        <a href="#" class="font-bold text-primary underline">service team</a>.
+      </p>
+    </div>
 
     <!-- FAQ -->
-    <div class="js-accordion flex w-full flex-col gap-4 py-10 lg:py-14">
+    <div class="js-accordion flex w-full flex-col gap-4 lg:pb-14">
       <!-- Accordion -->
       {%
         for item in [
@@ -127,7 +131,7 @@
           id="heading-{{ loopIndex }}"
         >
           <button
-            class="text-primary group inline-flex w-full items-center justify-between gap-x-3 rounded-lg text-start font-mono text-xl font-bold transition"
+            class="group inline-flex w-full items-center justify-between gap-x-3 rounded-lg text-start font-mono text-lg font-bold text-primary transition aria-expanded:text-primary lg:text-xl"
             aria-expanded="{% if loop.first %}true{% else %}false{% endif %}"
             aria-controls="collapse-{{ loopIndex }}"
           >
@@ -150,7 +154,7 @@
             {% for child in item.child %}
               <div class="border-b py-4" id="heading-loopIndex-{{ loop.index }}">
                 <button
-                  class="[&[aria-expanded=true]]:text-primary group inline-flex w-full items-center justify-between gap-x-3 rounded-lg text-start font-bold transition"
+                  class="group inline-flex w-full items-center justify-between gap-x-3 rounded-lg text-start transition aria-expanded:text-primary [&[aria-expanded=true]]:text-primary"
                   aria-expanded="{% if loop.first %}true{% else %}false{% endif %}"
                   aria-controls="collapse-loopIndex-{{ loop.index }}"
                 >
@@ -170,7 +174,7 @@
                   role="region"
                   aria-labelledby="heading-loopIndex-{{ loop.index }}"
                 >
-                  <div class="mt-3 rounded-xl bg-gray-100 p-4">{{ child.text }}</div>
+                  <div class="mt-3 rounded-xl bg-[#f8f8f8] p-4">{{ child.text }}</div>
                 </div>
               </div>
             {% endfor %}

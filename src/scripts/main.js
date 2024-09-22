@@ -19,10 +19,9 @@ const swiper = new Swiper(".js-hero-bottom-slider", {
   spaceBetween: 20,
   speed: 500,
   breakpoints: {
-    // 640: {
-    //   slidesPerView: 4,
-    //   spaceBetween: 20,
-    // },
+    640: {
+      slidesPerView: 3,
+    },
     // 1024: {
     //   slidesPerView: 3,
     //   spaceBetween: 30,

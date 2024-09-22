@@ -3,7 +3,7 @@
   "printWidth": 120,
   "overrides": [
     {
-      "files": ["*.{html,njk}"],
+      "files": ["*.njk"],
       "options": {
         "parser": "jinja-template"
       }

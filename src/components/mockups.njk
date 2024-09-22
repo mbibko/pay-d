@@ -1,46 +1,55 @@
 {% from "./elements/popover.njk" import popover %}
 
-<div style="background: #E6E8ED url('/img/bg/mockups-bg.svg') 0 0 / cover no-repeat" class="pb-6">
-  <div class="container">
-    <div class="relative top-20 flex max-lg:flex-wrap lg:items-center lg:justify-center">
-      <div class="relative mt-11 flex-none self-start">
+<div
+  class="bg-[#E6E8ED] bg-[url('/img/bg/mockups-bg-mobile.svg')] bg-cover bg-no-repeat pb-6 md:bg-[url('/img/bg/mockups-bg.svg')]"
+>
+  <div
+    class="pointer-events-none absolute inset-x-0 top-[-70px] h-full bg-[url('/img/bg/mockups-bg-mobile.svg')] bg-[length:100%_auto] bg-no-repeat md:hidden"
+  ></div>
+  <div class="container max-w-[900px]">
+    <div class="relative max-md:pt-20 max-sm:pt-7 md:top-20 md:flex md:items-center md:justify-center max-lg:-mb-16">
+      <!--  -->
+      <div class="relative flex-none self-start max-md:w-1/2 md:mt-11 md:w-[39%]">
         {{
           popover(
           {
             title: "Billing and <br> Invoicing",
-            className: "w-[150px] left-[30px] top-[-35px]",
-            arrPos: "bottom"
+            className: "w-[150px] left-[20px] md:left-[30px] top-[-55px] md:top-[-35px]",
+            position: "bottom"
           })
         }}
         <img width="330" class="" src="/img/mockups/1.png" alt="mockups" />
       </div>
+      <!--  -->
       <div
-        class="relative z-10 flex w-[484px] flex-none max-lg:left-10 max-lg:-mt-80 max-lg:ml-auto lg:-ml-[60px] lg:-mr-[60px]"
+        class="relative z-10 flex flex-none max-md:left-[20px] max-md:ml-auto max-md:mt-[-45%] max-md:w-[70%] md:-ml-[60px] md:-mr-[60px] md:w-[57%]"
       >
         {{
           popover(
           {
           title: "Access to <br> Analytics & <br> Reporting",
-          className: "max-lg:text-center w-[200px] left-14 lg:left-[20%] top-[-50px]",
-          arrPos: "bottom"
+          className: "max-md:text-center w-[200px] left-14 md:left-[20%] top-[-50px]",
+          position: "bottom"
           })
         }}
         <div class="">
           <img width="484" src="/img/mockups/2.png" alt="mockups" />
         </div>
       </div>
-      <div class="relative z-10 flex-none">
+      <!--  -->
+      <div class="relative z-10 flex-none max-md:ml-7 max-md:mt-[-22%] w-[44%] md:w-[24%]">
         {{
           popover(
           {
           title: "Customisable <br> payment <br> page",
-          className: "w-[175px] left-full lg:left-8 top-20 max-lg:ml-8 lg:top-[-100px]",
-          arrPos: "bottom",
-          arrClassName: "max-lg:left-0 max-lg:top-1/2 -translate-x-[22px] max-lg:rotate-90"
+          className: "max-md:!text-left w-[170px] md:w-[175px] left-full md:left-8 top-28 md:top-20 max-md:ml-2 md:top-[-100px]",
+          position: "bottom",
+          arrClassName: "max-md:left-0 max-md:top-1/2 -translate-x-[22px] max-md:rotate-90"
           })
         }}
-        <img width="209" class="" src="/img/mockups/3.png" alt="mockups" />
+        <img width="209" class="ml-auto" src="/img/mockups/3.png" alt="mockups" />
       </div>
+      <!--  -->
     </div>
   </div>
 </div>
