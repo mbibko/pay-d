@@ -1,0 +1,82 @@
+{% extends 'layouts/main.njk' %}
+{% block content %}
+  <div class="page">
+    <div class="mb-20">
+      {% include "./components/header.njk" %}
+    </div>
+    {{ section.header('Onboarding', "Merchant", "mb-5") }}
+    <p class="mb-20 text-center text-[#343434]">These are the general steps/documents to be provided</p>
+    <div class="mx-auto max-w-[546px]">
+      <div class="mb-10 flex flex-col gap-6">
+        {%
+          for item in [
+            {
+              text: 'The merchants receive a link to start a digital onboarding process where all the information and documents are entered/submitted in a web form.'
+            },
+            {
+              title: "Merchants provide general information on the company",
+              list: ["Legal name, VAT, type of business, address, etc.", "Details on the ultimate beneficiary “UBO” (Usually CEO/Managing director)", "Identification of the UBO(s)"]
+            },
+            {
+              title: "Payout information",
+              text: "Merchant will need to specify their pay-out information (e.g. Bank account data, pay-out frequency and a relevant contact person(s) "
+            },
+            {
+              title: "Supporting documents",
+              text: "Merchants need to submit supporting documents, such as authorized signatory lists and identification, for the Know Your Customer (KYC) process during account creation. Document requirements vary based on merchant type and are communicated during onboarding."
+            }
+          ]
+        %}
+          <div class="group relative flex min-h-[150px] gap-10">
+            <div
+              class="border-[rgba(39, 61, 166, 0.19)] group-first:custom-gradient-primary relative flex size-[90px] items-center justify-center rounded-xl border bg-white"
+            >
+              <img height="40" class="h-[40px] flex-none" src="/img/onboarding/{{ loop.index }}.png" alt="icon" />
+              <span
+                class="absolute left-1/2 top-full flex size-[34px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[linear-gradient(328deg,_#C0C0C0_4.53%,_#515879_98.06%)] font-mono text-lg font-bold text-white group-first:bg-gradient-to-b group-first:from-[#b7bdd8] group-first:to-[#f2f2f3] group-first:text-primary group-first:shadow-[0px_0px_15px_rgba(0,_0,_0,_0.50)]"
+                >{{ loop.index }}</span
+              >
+            </div>
+            <div class="flex-1 text-[#656565]">
+              <div class="font-mono text-lg font-bold text-primary">{{ item.title }}</div>
+              <p class="">{{ item.text }}</p>
+              {% if item.list %}
+                <ol class="mt-4">
+                  {% for item in item.list %}
+                    <li class="relative mb-1 pl-6">
+                      <span class="absolute left-0 font-bold text-primary">{{ loop.index }}.</span>
+                      {{ item }}
+                    </li>
+                  {% endfor %}
+                </ol>
+              {% endif %}
+            </div>
+            {% if not loop.last %}
+              <div
+                class="absolute bottom-0 left-[44px] top-[110px] w-[4px] bg-[url('/img/line.png')] bg-repeat-y"
+              ></div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="custom-gradient-primary card-bg-before rounded-xl px-10 py-6 text-white">
+        <div class="relative">
+          <img height="68" class="mb-6 block h-[46px]" src="/img/features/5.png" alt="icon" />
+          <div class="mb-2 font-mono text-lg font-bold">Get in touch</div>
+          <p class="mb-2">
+            Merchant onboarding allows your company to establish an account and begin receiving online payments. Get in
+            touch and share your business requirements with us, and we'll assist you through the onboarding process once
+            integration begins with your company.
+          </p>
+          <a href="#" class="btn btn-primary h-[40px] pr-3">
+            Let’s have a talk
+            <svg class="icon ms-5 flex-none fill-white" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="#icon-arr"></use>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

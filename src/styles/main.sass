@@ -19,6 +19,9 @@
   .h3
     @apply text-[1.375rem] leading-7 md:text-[2.25rem] md:leading-normal lg:text-[3.25rem] lg:leading-[3.25rem]
 
+  .page
+    @apply bg-[url('/img/bg/page-bg.jpg')] bg-[length:100%_auto] bg-no-repeat
+
 @layer components
   .container
     @apply max-xs:px-3
@@ -101,6 +104,11 @@
 
   .features-table-mobile-title
     @apply font-mono border-b-2 py-1.5 text-center uppercase text-sm text-neutral-700 lg:hidden
+
+  .card-bg-before
+    @apply relative before
+    &::before
+      @apply inset-0 bg-[url('/img/bg/card-bg.svg')] bg-cover bg-no-repeat
 
 
 
