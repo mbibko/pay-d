@@ -5,7 +5,10 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      padding: "1.625rem", // 26px
+      padding: {
+        DEFAULT: '0.8rem',
+        xs: "1.625rem", // 26px,
+      },
       screens: {
         "2xl": "1198px", // Adjust as needed for extra extra large screens
       },
@@ -15,6 +18,9 @@ module.exports = {
       grotesk: ["Space Grotesk", "sans-serif"],
     },
     extend: {
+      screens: {
+        xs: "414px",
+      },
       colors: {
         primary: "#0D2285",
         secondary: "#3C3",

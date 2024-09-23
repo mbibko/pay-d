@@ -31,9 +31,9 @@
           >
           <span class="lg:hidden font-mono text-lg">We provide</span>
         </div>
-        <div class="flex gap-2">
+        <div class="flex gap-1 xs:gap-2">
           {% for item in ["amex", "apple-pay", "g-pay", "mastercard", "paypal", "visa"] %}
-            <svg class="w-[52px] lg:w-[60px] h-[33px] lg:h-[38px]" xmlns="http://www.w3.org/2000/svg">
+            <svg class="w-[46px] xs:w-[52px] lg:w-[60px] h-[33px] lg:h-[38px]" xmlns="http://www.w3.org/2000/svg">
               <use xlink:href="#icon-payments-{{ item }}"></use>
             </svg>
           {% endfor %}
