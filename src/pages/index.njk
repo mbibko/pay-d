@@ -1,7 +1,8 @@
 {% import "./components/elements/titles.njk" as titles %}
 {% import "./components/elements/buttons.njk" as buttons %}
 {% import "./components/elements/section.njk" as section %}
-{% include 'layouts/main.njk' %}
+{% extends 'layouts/main.njk' %}
+{% block content %}
 
 <div
   class="overflow-hidden bg-[url('/img/bg/hero-bg2-mobile.jpg')] bg-[length:1575px_688px] bg-no-repeat lg:bg-[url('/img/bg/hero-bg.jpg')] lg:bg-[length:100%_auto]"
@@ -23,3 +24,5 @@
 </div>
 {% include "./components/faq.njk" %}
 {% include "./components/footer.njk" %}
+
+{% endblock %}
