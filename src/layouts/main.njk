@@ -7,7 +7,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pay-D | Homepage</title>
+    <title>Pay-D | {{ title or "Welcome" }}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,8 +16,11 @@
     />
     <link rel="stylesheet" href="/src/styles/main.sass">
   </head>
-  <body>
-    {% block content %} {% endblock %}
+  <body class="{{ className }}">
+    <main class="main">
+      {% block content %} {% endblock %}
+    </main>
+    {% include "../components/footer.njk" %}
     <script type="module" src="/src/scripts/main.js"></script>
   </body>
 </html>

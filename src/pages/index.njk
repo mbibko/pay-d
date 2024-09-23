@@ -1,8 +1,10 @@
+{% set bodyClass = 'home' %}
+
 {% extends 'layouts/main.njk' %}
 {% block content %}
 
 <div
-  class="overflow-hidden bg-[url('/img/bg/hero-bg2-mobile.jpg')] bg-[length:1575px_688px] bg-no-repeat lg:bg-[url('/img/bg/hero-bg.jpg')] lg:bg-[length:100%_auto]"
+  class="overflow-hidden"
 >
   {% include "./components/header.njk" %}
   {% include "./components/hero.njk" %}
@@ -20,6 +22,5 @@
   {% include "./components/get-in-touch.njk" %}
 </div>
 {% include "./components/faq.njk" %}
-{% include "./components/footer.njk" %}
 
 {% endblock %}
