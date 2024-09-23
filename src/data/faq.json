@@ -1,0 +1,111 @@
+{
+  "faqData": {
+    "items": [
+      {
+        "title": "General",
+        "child": [
+          {
+            "title": "Who can use Pay-D?",
+            "text": "We currently support major Credit and Debit Cards (such as Visa, MasterCard, American Express), Digital Wallets (including PayPal, Apple Pay, Google Pay)"
+          },
+          {
+            "title": "How can I use/get Pay-D?",
+            "text": "We currently support major Credit and Debit Cards (such as Visa, MasterCard, American Express), Digital Wallets (including PayPal, Apple Pay, Google Pay)"
+          },
+          {
+            "title": "How can I get in touch with Pay-D?",
+            "text": "We currently support major Credit and Debit Cards (such as Visa, MasterCard, American Express), Digital Wallets (including PayPal, Apple Pay, Google Pay)"
+          },
+          {
+            "title": "What kind of payments can I accept with Pay-D?",
+            "text": "We currently support major Credit and Debit Cards (such as Visa, MasterCard, American Express), Digital Wallets (including PayPal, Apple Pay, Google Pay)"
+          }
+        ]
+      },
+      {
+        "title": "Pricing",
+        "child": [
+          {
+            "title": "Who can use Pay-D?",
+            "text": "We currently support major Credit and Debit Cards (such as Visa, MasterCard, American Express), Digital Wallets (including PayPal, Apple Pay, Google Pay)"
+          },
+          {
+            "title": "How can I use/get Pay-D?",
+            "text": "We currently support major Credit and Debit Cards (such as Visa, MasterCard, American Express), Digital Wallets (including PayPal, Apple Pay, Google Pay)"
+          },
+          {
+            "title": "How can I get in touch with Pay-D?",
+            "text": "We currently support major Credit and Debit Cards (such as Visa, MasterCard, American Express), Digital Wallets (including PayPal, Apple Pay, Google Pay)"
+          },
+          {
+            "title": "What kind of payments can I accept with Pay-D?",
+            "text": "We currently support major Credit and Debit Cards (such as Visa, MasterCard, American Express), Digital Wallets (including PayPal, Apple Pay, Google Pay)"
+          }
+        ]
+      },
+      {
+        "title": "Additional",
+        "child": [
+          {
+            "title": "Who can use Pay-D?",
+            "text": "We currently support major Credit and Debit Cards (such as Visa, MasterCard, American Express), Digital Wallets (including PayPal, Apple Pay, Google Pay)"
+          }
+        ]
+      },
+      {
+        "title": "Integration",
+        "child": [
+          {
+            "title": "Who can use Pay-D?",
+            "text": "We currently support major Credit and Debit Cards (such as Visa, MasterCard, American Express), Digital Wallets (including PayPal, Apple Pay, Google Pay)"
+          }
+        ]
+      },
+      {
+        "title": "Merchant Onboarding",
+        "child": [
+          {
+            "title": "Who can use Pay-D?",
+            "text": "We currently support major Credit and Debit Cards (such as Visa, MasterCard, American Express), Digital Wallets (including PayPal, Apple Pay, Google Pay)"
+          }
+        ]
+      },
+      {
+        "title": "Data Processing",
+        "child": [
+          {
+            "title": "Who can use Pay-D?",
+            "text": "We currently support major Credit and Debit Cards (such as Visa, MasterCard, American Express), Digital Wallets (including PayPal, Apple Pay, Google Pay)"
+          }
+        ]
+      },
+      {
+        "title": "Currency Acceptance",
+        "child": [
+          {
+            "title": "Who can use Pay-D?",
+            "text": "We currently support major Credit and Debit Cards (such as Visa, MasterCard, American Express), Digital Wallets (including PayPal, Apple Pay, Google Pay)"
+          }
+        ]
+      },
+      {
+        "title": "Use Cases",
+        "child": [
+          {
+            "title": "Who can use Pay-D?",
+            "text": "We currently support major Credit and Debit Cards (such as Visa, MasterCard, American Express), Digital Wallets (including PayPal, Apple Pay, Google Pay)"
+          }
+        ]
+      },
+      {
+        "title": "Global Reach",
+        "child": [
+          {
+            "title": "Who can use Pay-D?",
+            "text": "We currently support major Credit and Debit Cards (such as Visa, MasterCard, American Express), Digital Wallets (including PayPal, Apple Pay, Google Pay)"
+          }
+        ]
+      }
+    ]
+  }
+}

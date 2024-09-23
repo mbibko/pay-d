@@ -1,0 +1,93 @@
+{
+  "featuresData": {
+    "integrations": [
+      {
+        "product": "Standard",
+        "integration": "Standalone integration",
+        "text": "Ideal for short term integration and useful for quickly bringing an use case with payment functions live. Involves one separate integration per system."
+      },
+      {
+        "product": "Advanced",
+        "integration": "Integration with orchestration layer",
+        "text": "Ideal for a seamless customer experience across different systems. Involves a single unified integration for multiple connected systems."
+      }
+    ],
+    "items": [
+      {
+        "title": "Payment Processing",
+        "text": "Integration of payment page into UI.",
+        "icon": "layers",
+        "data": [{ "included": true }, { "included": true }]
+      },
+      {
+        "title": "Back-End Systems Connection",
+        "text": "Connection between your backend and our payment infrastructure through our APIs.",
+        "icon": "storage",
+        "data": [{ "included": true }, { "included": true }]
+      },
+      {
+        "title": "Customer Wallet",
+        "text": "",
+        "icon": "wallet",
+        "data": [
+          {
+            "included": true,
+            "description": "Offer a standard wallet function for secure payment storage within a single system"
+          },
+          {
+            "included": true,
+            "description": "Offer one single <b>Toyota PaymentID</b> and <b>Toyota CustomerWallet</b> that can be used for purchases of Toyota products and services across systems"
+          }
+        ]
+      },
+      {
+        "title": "Subscription Model",
+        "text": "",
+        "icon": "arr-circle",
+        "data": [
+          { "included": false },
+          { "included": true, "description": "Subscription model for <b>recurring payments</b>" }
+        ]
+      },
+      {
+        "title": "Billing & Invoicing",
+        "text": "",
+        "icon": "doc",
+        "data": [
+          { "included": false },
+          {
+            "included": true,
+            "description": "Collection of <b>billing information, generation</b>, and <b>billing schedule management</b>"
+          }
+        ]
+      },
+      {
+        "title": "Tax Calculation",
+        "text": "",
+        "icon": "circle-diagram",
+        "data": [
+          { "included": false },
+          { "included": true, "description": "Based on <b>specific product</b> or <b>service taxability</b> rules" }
+        ]
+      },
+      {
+        "title": "Analytics & Reporting",
+        "text": "",
+        "icon": "diagram",
+        "data": [
+          { "included": true, "description": "Admin to merchant panel (Admin UI)" },
+          {
+            "included": true,
+            "description": "Customer <b>purchasing behaviour analysis</b> across all connected E-commerce systems"
+          }
+        ]
+      },
+      {
+        "title": "Pricing",
+        "text": "",
+        "icon": "diagram",
+        "data": [{ "description": "1% + 0,10€" }, { "description": "2,5% + 0,10€" }]
+      }
+    ]
+  }
+}
