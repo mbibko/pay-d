@@ -1,15 +1,15 @@
 {% from "./elements/popover.njk" import popover %}
 
 <div
-  class="bg-[#E6E8ED] bg-[url('/img/bg/mockups-bg-mobile.svg')] bg-cover bg-no-repeat pb-6 md:bg-[url('/img/bg/mockups-bg.svg')]"
+  class="bg-[#E6E8ED] bg-[url('/img/bg/mockups-bg-mobile.svg')] bg-cover bg-no-repeat pb-6 md:pb-10 md:bg-[url('/img/bg/mockups-bg.svg')]"
 >
   <div
     class="pointer-events-none absolute inset-x-0 top-[-70px] h-full bg-[url('/img/bg/mockups-bg-mobile.svg')] bg-[length:100%_auto] bg-no-repeat md:hidden"
   ></div>
-  <div class="container max-w-[900px]">
-    <div class="relative max-md:pt-20 max-sm:pt-7 md:top-20 md:flex md:items-center md:justify-center max-md:-mb-16">
+  <div class="container max-w-[940px]">
+    <div class="relative max-md:pt-20 max-sm:pt-7 md:pt-24 md:flex md:items-center md:justify-center -mb-16">
       <!--  -->
-      <div class="relative flex-none self-start max-md:w-1/2 md:mt-11 md:w-[39%]">
+      <div class="relative flex-none self-start max-md:w-1/2 md:mt-6 md:w-[37.5%]">
         {{
           popover(
           {
@@ -18,31 +18,31 @@
             position: "bottom"
           })
         }}
-        <img width="330" class="" src="/img/mockups/1.png" alt="mockups" />
+        <img width="330" class="shadow-[0px_0px_10px_0px_rgba(13,_34,_133,_0.08)]" src="/img/mockups/1_.png" alt="mockups" />
       </div>
       <!--  -->
       <div
-        class="relative z-10 flex flex-none max-md:left-[7%] max-md:ml-auto max-md:mt-[-45%] max-md:w-[75%] md:-ml-[60px] md:-mr-[60px] md:w-[57%]"
+        class="relative z-20 flex flex-none max-md:ml-auto max-md:mt-[-38%] max-md:w-[64%] md:ml-[-4%] md:mr-[-3%] md:w-[47%]"
       >
         {{
           popover(
           {
           title: "Access to <br> Analytics & <br> Reporting",
-          className: "max-md:text-center  w-[160px] md:w-[200px] left-[14%] md:left-[26%] top-[-40px]",
+          className: "max-md:text-center  w-[200px] left-[50%] max-md:-translate-x-1/2 md:left-[26%] top-[-20%] md:top-[-15%]",
           position: "bottom"
           })
         }}
-        <div class="">
-          <img width="484" src="/img/mockups/2.png" alt="mockups" />
+        <div class="max-md:ml-auto relative before before:h-full before:left-[-13%] before:right-[-13%] before:bottom-[-40px] before:pointer-events-none before:bg-[url('/img/mockups/2_shadows.png')] before:bg-no-repeat before:bg-[length:100%_auto] before:bg-bottom">
+          <img class="relative" width="411" src="/img/mockups/2_.png" alt="mockups" />
         </div>
       </div>
       <!--  -->
-      <div class="relative z-10 flex-none max-md:ml-7 max-md:mt-[-22%] w-[44%] md:w-[24%]">
+      <div class="relative z-30 md:z-10 flex-none max-md:ml-[6%] max-md:mt-[-22%] w-[44%] md:w-[22.5%]">
         {{
           popover(
           {
           title: "Customisable <br> payment <br> page",
-          className: "max-md:!text-left w-[150px] md:w-[170px] left-full md:left-0 lg:left-8 top-28 md:top-20 max-md:ml-2 md:top-[-100px]",
+          className: "max-md:!text-left w-[150px] md:w-auto lg:w-[170px] left-full md:left-auto md:right-0 top-28 md:top-20 max-md:ml-2 md:top-[-100px]",
           position: "bottom",
           arrClassName: "max-md:left-0 max-md:top-1/2 -translate-x-[22px] max-md:rotate-90"
           })
