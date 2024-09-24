@@ -85,8 +85,50 @@
       {
         "title": "Pricing",
         "text": "",
-        "icon": "diagram",
+        "icon": "dollar",
         "data": [{ "description": "1% + 0,10€" }, { "description": "2,5% + 0,10€" }]
+      }
+    ],
+    "items2": [
+      {
+        "title": "Payment <br> Processing",
+        "icon": "layers",
+        "data": [{ "included": true }, { "included": true }]
+      },
+      {
+        "title": "Back-End Systems <br> Connection",
+        "icon": "storage",
+        "data": [{ "included": true }, { "included": true }]
+      },
+      {
+        "title": "One <br> Wallet",
+        "icon": "wallet",
+        "data": [{"included": true}, {"included": true}]
+      },
+      {
+        "title": "Subscription <br> Model",
+        "icon": "arr-circle",
+        "data": [{ "included": false }, { "included": true }]
+      },
+      {
+        "title": "Billing & <br> Invoicing",
+        "icon": "doc",
+        "data": [{ "included": false }, {"included": true}]
+      },
+      {
+        "title": "Tax <br> Calculation",
+        "icon": "circle-diagram",
+        "data": [{ "included": false }, { "included": true }]
+      },
+      {
+        "title": "Analytics & <br> Reporting",
+        "icon": "diagram",
+        "data": [{ "included": true }, {"included": true}]
+      },
+      {
+        "title": "Secure <br> payments",
+        "icon": "shield",
+        "data": [{ "included": true }, {"included": true}]
       }
     ]
   }
