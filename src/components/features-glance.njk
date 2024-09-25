@@ -1,0 +1,47 @@
+{#{% set imgSizes = [[446, 353], [392, 326], [451, 332], [388, 309]] %}#}
+
+{% for item in featuresData.items %}
+  {% if item.id !== "pricing" %}
+    <div
+      class="group mb-2 flex flex-col items-center justify-between gap-10 rounded-2xl py-6 odd:bg-white odd:px-6 max-lg:odd:shadow-[0px_0px_15px_0px_rgba(0,_0,_0,_0.05)] lg:mb-8 lg:flex-row lg:py-16 lg:shadow-[0px_0px_15px_0px_rgba(0,_0,_0,_0.05)] lg:odd:px-10"
+    >
+      <div class="flex-[0_1_57%] md:group-odd:first:order-1">
+        <div class="flex flex-col gap-6 sm:flex-row">
+          <div
+            class="relative flex size-[64px] flex-none items-center justify-center rounded-xl bg-white shadow-[0px_0px_14px_0px_rgba(13,_34,_133,_0.12)] xl:group-even:-ml-6"
+          >
+            {% set isStandard = item.data[0].included %}
+            {% set isAdvanced = item.data[1].included %}
+            <span class="absolute left-[-8px] top-[-4px] z-0">
+              <span
+                class="circles is-lg {% if isStandard %}is-standard{% endif %} {% if isAdvanced %}is-advanced{% endif %}"
+              ></span>
+            </span>
+            <svg class="flex-none fill-primary" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="#icon-simple-{{ item.icon }}"></use>
+            </svg>
+          </div>
+          <div class="">
+            <h3 class="mb-2 font-mono text-2xl font-bold text-primary lg:text-3xl [&_br]:hidden">
+              {{ item.title | safe }}
+            </h3>
+            <p class="mb-7 text-balance leading-tight text-[#5D5D5D]">{{ item.description }}</p>
+            <ul class="max-w-[516px] text-sm">
+              {% for listItem in item.list %}
+                {% set isStandard = listItem[0] %}
+                {% set isAdvanced = listItem[1] %}
+                <li class="mb-3 flex border-b pb-3">
+                  <span
+                    class="circles is-inverted {% if isStandard %}is-standard{% endif %} {% if isAdvanced %}is-advanced{% endif %} mr-2 mt-1 flex-none"
+                  ></span
+                  ><span> {{ listItem[2] | safe }} </span>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+      <img class="flex-none" src="/img/features/glance/{{ loop.index }}.png" alt="mockup" />
+    </div>
+  {% endif %}
+{% endfor %}

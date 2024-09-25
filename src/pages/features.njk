@@ -2,39 +2,61 @@
 {% block content %}
   <div class="mb-20">{% include "./components/header.njk" %}</div>
   <div class="container">
-    {{ section.header('Product Features of Pay-D', "Feature overview", "mb-5", "h1") }}
-    <div class="mx-auto max-w-[1046px]">
-      <div class="mb-10 flex flex-wrap gap-5">
-        {% for item in featuresData.items2 %}
-          <div style="--image-url: url('/img/bg/card-bg/card-{{ loop.index - 1 }}.jpg')" class="bg-cover bg-[image:var(--image-url)] flex flex-col gap-4 md:flex-row md:justify-between md:items-center w-1/2 flex-1 basis-1/3 rounded-xl bg-[#DFE2EC] p-8  ">
-            <div class="flex gap-4">
-              <!--  -->
-              <div class="relative flex size-[64px] flex-none items-center justify-center rounded-xl bg-white">
-                {% if item.data[0].included %}
-                  <span
-                    class="custom-gradient-primary absolute left-[-2px] top-[-4px] block size-[18px] rounded-full"
-                  ></span>
-                {% endif %}
-                {% if item.data[1].included %}
-                  <span
-                    class="custom-gradient-secondary absolute left-[-8px] top-[-4px] block size-[18px] rounded-full"
-                  ></span>
-                {% endif %}
-                <svg class="flex-none fill-primary" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
-                  <use xlink:href="#icon-simple-{{ item.icon }}"></use>
-                </svg>
+    {{ section.header('Product Features of Pay-D', "Feature overview", "mb-5", "h1", "h2") }}
+    <div class="mb-10">
+      <div class="mb-8 flex flex-wrap gap-[1.8rem]">
+        <div class="flex flex-1 items-center justify-end gap-2 text-sm font-bold text-primary">
+          <span class="circles is-standard is-md"></span> Standard product
+        </div>
+        <div class="flex flex-1 items-center gap-2 text-sm font-bold text-secondary">
+          <span class="circles is-advanced is-md"></span> Advanced product
+        </div>
+      </div>
+      <div
+        class="mb-20 lg:mb-32 flex flex-wrap gap-[var(--gap)]"
+        style="--gap: 1.8rem; --items-per-row: 1; --md_items-per-row: 2;"
+      >
+        {% for item in featuresData.items %}
+          {% if item.id !== "pricing" %}
+            <div
+              style="--image-url: url('/img/bg/card-bg/card-{{ loop.index - 1 }}.jpg')"
+              class="flex-item flex flex-col gap-4 overflow-hidden rounded-[20px] bg-[#DFE2EC] bg-[image:var(--image-url)] bg-cover p-8 xl:flex-row xl:items-center xl:justify-between"
+            >
+              <div class="flex gap-6">
+                <!--  -->
+                <div class="relative flex size-[64px] flex-none items-center justify-center rounded-xl bg-white">
+                  {% set isStandard = item.data[0].included %}
+                  {% set isAdvanced = item.data[1].included %}
+                  <span class="absolute left-[-2px] top-[-8px] z-0">
+                    <span
+                      class="circles is-lg {% if isStandard %}is-standard{% endif %} {% if isAdvanced %}is-advanced{% endif %}"
+                    ></span>
+                  </span>
+                  <svg class="flex-none fill-primary" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="#icon-simple-{{ item.icon }}"></use>
+                  </svg>
+                </div>
+                <div class="max-w-min font-mono text-xl font-bold text-primary">
+                  {{ item.altTitle or item.title | safe }}
+                </div>
               </div>
-              <div class="flex-1 font-mono text-xl font-bold text-primary">{{ item.title | safe }}</div>
+              <a href="#" class="btn btn-sm btn-secondary max-xl:self-start">
+                LEARN&nbsp;MORE
+                <svg class="ms-2 fill-primary" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="#icon-arr"></use>
+                </svg>
+              </a>
             </div>
-            <a href="#" class="btn btn-xs btn-secondary">
-              LEARN&nbsp;MORE
-              <svg class="ms-2 fill-primary" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
-                <use xlink:href="#icon-arr"></use>
-              </svg>
-            </a>
-          </div>
+          {% endif %}
         {% endfor %}
       </div>
     </div>
   </div>
+  <div class="xl:mb-20 bg-[url('/img/bg/decor-mobile.svg')] lg:bg-[url('/img/bg/decor.svg')] bg-[length:100%_auto] bg-no-repeat">
+    <div class="container">
+      {{ section.header('Our features at a glance', "Our Features in detail", "mb-0", "h2") }}
+      {% include "./components/features-glance.njk" %}
+    </div>
+  </div>
+  {% include "./components/get-in-touch2.njk" %}
 {% endblock %}

@@ -14,21 +14,43 @@
     ],
     "items": [
       {
+        "id": "payment_processing",
         "title": "Payment Processing",
         "text": "Integration of payment page into UI.",
         "icon": "layers",
+        "description": "Payment Orchestration: Management and processing of payments including initiation and settlement of payment of products and services in your webpage and/or webapp.",
+        "list": [
+          [true, true, "Payment via API calls"],
+          [true, true, "Payment capturing, processing, execution and response"],
+          [true, true, "Set-up multiple merchants to receive funds"],
+          [true, true, "Refund payments via API or Merchant Panel"]
+        ],
         "data": [{ "included": true }, { "included": true }]
       },
       {
-        "title": "Back-End Systems Connection",
+        "id": "backend_nbsp_systems_connection",
+        "title": "Back&#8209;End&nbsp;Systems Connection",
         "text": "Connection between your backend and our payment infrastructure through our APIs.",
         "icon": "storage",
+        "description": "Integrated online payment solution for your business.",
+        "list": [
+          [true, true, "Connect Seamlessly: link your business to our payment system using our APIs for smooth data transfer between your Back-End and our gateway"],
+          [true, true, "Easy integration: Add our customizable payment page to your site or app (as an in-frame page or pop-up) to let customers enter their payment details and complete their purchase."]
+        ],
         "data": [{ "included": true }, { "included": true }]
       },
       {
+        "id": "customer_wallet",
         "title": "Customer Wallet",
+        "altTitle": "One \nWallet",
         "text": "",
         "icon": "wallet",
+        "description": "Offer a digital wallet for fast, secure transactions, with stored payment methods for easy checkouts",
+        "list": [
+          [true, false, "Offer a standard wallet function for secure payment storage within a single systems that integrates with your product"],
+          [false, true, "Offer an advanced <b>ToyotaCustomer</b> wallet function for secure payment storage"],
+          [false, true, "Offer one single <b>Toyota PaymentID</b> and Toyota <b>CustomerWallet</b> that can be used for purchases across multiple Toyota Webshops."]
+        ],
         "data": [
           {
             "included": true,
@@ -41,18 +63,32 @@
         ]
       },
       {
+        "id": "subscription_model",
         "title": "Subscription Model",
         "text": "",
         "icon": "arr-circle",
+        "description": "Subscriptions offer regular, automatic payments for continuous access, with features like auto-renewal, easy cancellation, and secure processing.",
+        "list": [
+          [false, true, "Subscription setup: Create and manage subscription plans, including pricing, billing intervals, rules for charges, and cancellation options."],
+          [false, true, "Definition of auto renewal policies"]
+        ],
         "data": [
           { "included": false },
           { "included": true, "description": "Subscription model for <b>recurring payments</b>" }
         ]
       },
       {
+        "id": "billing_invoicing",
         "title": "Billing & Invoicing",
         "text": "",
         "icon": "doc",
+        "description": "Invoicing and billing are integral components of the financial transaction process helping to maintain transparency, facilitate timely payments, and establish a clear record of business transactions between parties.",
+        "list": [
+          [false, true, "Creation and maintenance of billing schedules"],
+          [false, true, "Invoice generation for products or services rendered"],
+          [false, true, "Management of customer billing & payment preferences (e.g. Credit Card, Paypal, etc.)"],
+          [false, true, "Customer communication (via email) of callout for billing and payment related events"]
+        ],
         "data": [
           { "included": false },
           {
@@ -62,18 +98,32 @@
         ]
       },
       {
+        "id": "tax_calculation",
         "title": "Tax Calculation",
         "text": "",
         "icon": "circle-diagram",
+        "description": "We provice the support and essential tools required to calculate and manage taxes according to the taxability rules specific to your products or services.",
+        "list": [
+          [false, true, "Support taxes for multi region & multiple VAT handling: management and processing of different VAT rates simultaneously; depending on the location and/or region requirements."],
+          [false, true, "Management of tax rates by jurisdiction and application of taxes to billing transactions based on your product taxability rules."]
+        ],
         "data": [
           { "included": false },
           { "included": true, "description": "Based on <b>specific product</b> or <b>service taxability</b> rules" }
         ]
       },
       {
-        "title": "Analytics & Reporting",
+        "id": "analytics_nbsp_reporting",
+        "title": "Analytics&nbsp;& Reporting",
         "text": "",
         "icon": "diagram",
+        "description": "Get regular operational and financial reports to track your transactions and monitor your business performance",
+        "list": [
+          [true, true, "Back office management: access to Merchant Panel (transactional information e.g. monthly payments, utilized payment methods, etc.)"],
+          [false, true, "Operational reporting: standardized reporting and data exports on a periodic or ad-hoc schedule"],
+          [false, true, "Financial reporting: reports on transactional data, revenue recognition and payment to facilitate finance and accounting"],
+          [false, true, "Enables the organization to analyse and leverage purchasing behaviour across all connected E-commerce systems"]
+        ],
         "data": [
           { "included": true, "description": "Admin to merchant panel (Admin UI)" },
           {
@@ -83,52 +133,21 @@
         ]
       },
       {
+        "id": "secure_payments",
+        "title": "Secure payments",
+        "icon": "shield",
+        "description": "Every payment is going through our safe environment with multiple safety instances.",
+        "list": [
+          [true, true, "Tokenised transactions, PCI DSS Level 1, SSL /TLS certification, 3DS2 authentication, GDPR compliant"]
+        ],
+        "data": [{ "included": true }, { "included": true }]
+      },
+      {
+        "id": "pricing",
         "title": "Pricing",
         "text": "",
         "icon": "dollar",
         "data": [{ "description": "1% + 0,10€" }, { "description": "2,5% + 0,10€" }]
-      }
-    ],
-    "items2": [
-      {
-        "title": "Payment <br> Processing",
-        "icon": "layers",
-        "data": [{ "included": true }, { "included": true }]
-      },
-      {
-        "title": "Back-End Systems <br> Connection",
-        "icon": "storage",
-        "data": [{ "included": true }, { "included": true }]
-      },
-      {
-        "title": "One <br> Wallet",
-        "icon": "wallet",
-        "data": [{"included": true}, {"included": true}]
-      },
-      {
-        "title": "Subscription <br> Model",
-        "icon": "arr-circle",
-        "data": [{ "included": false }, { "included": true }]
-      },
-      {
-        "title": "Billing & <br> Invoicing",
-        "icon": "doc",
-        "data": [{ "included": false }, {"included": true}]
-      },
-      {
-        "title": "Tax <br> Calculation",
-        "icon": "circle-diagram",
-        "data": [{ "included": false }, { "included": true }]
-      },
-      {
-        "title": "Analytics & <br> Reporting",
-        "icon": "diagram",
-        "data": [{ "included": true }, {"included": true}]
-      },
-      {
-        "title": "Secure <br> payments",
-        "icon": "shield",
-        "data": [{ "included": true }, {"included": true}]
       }
     ]
   }

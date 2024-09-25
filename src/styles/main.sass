@@ -23,6 +23,8 @@
     @apply lg:text-[4.125rem] lg:leading-[4.125rem]
   .h3
     @apply text-[1.375rem] leading-7 md:text-[2.25rem] md:leading-normal lg:text-[3.25rem] lg:leading-[3.25rem]
+  .h4
+    @apply text-[1.32rem] leading-7 md:text-[2.2rem] md:leading-normal lg:text-[3rem] lg:leading-[3rem]
 
   .page
     //@apply bg-[url('/img/bg/page-bg.jpg')] bg-[length:100%_auto] bg-no-repeat
@@ -115,6 +117,35 @@
     &::before
       @apply inset-0 bg-[url('/img/bg/card-bg.svg')] bg-cover bg-no-repeat rounded-xl
 
+  .circles
+    @apply inline-block w-[16px] h-[12px] before after
+    &::before,
+    &::after
+      @apply size-[12px] block rounded-full left-0 top-0
+    &::before
+      @apply hidden custom-gradient-secondary
+    &::after
+      @apply hidden custom-gradient-primary
+    &.is-advanced::before
+      @apply block
+    &.is-advanced::after
+      @apply left-[4px]
+    &.is-standard::after
+      @apply block
+    &.is-inverted::after
+      @apply -z-10
+    &.is-lg
+      @apply w-[26px] h-[18px]
+      &::before,
+      &::after
+        @apply size-[18px]
+      &.is-advanced::after
+        @apply left-[8px]
+    &.is-md
+      @apply h-[16px]
+      &::before,
+      &::after
+        @apply size-[18px]
 
 
 
@@ -126,5 +157,11 @@
     background: linear-gradient(292deg, #33CC33 6.81%, #309F52 92.38%)
   .before
     @apply relative before:absolute before:block before:content-['']
+  .after
+    @apply relative after:absolute after:block after:content-['']
   .before-center
     @apply before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2
+  .flex-item
+    flex: 0 0 calc((100% - (var(--gap) * (var(--items-per-row) - 1))) / var(--items-per-row))
+    @media only screen and (width >= 768px)
+      --items-per-row: var(--md_items-per-row)

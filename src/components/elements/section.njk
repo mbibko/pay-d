@@ -1,11 +1,11 @@
 {% import "./titles.njk" as titles %}
 {% import "./buttons.njk" as buttons %}
 
-{% macro header(title, subtitle, className, tagName = "h2") %}
+{% macro header(title, subtitle, className, tagName = "h2", titleClassName = "") %}
 
   <div class="{{ className }} mx-auto flex flex-col items-center">
     {{ buttons.buttonSection(subtitle) }}
-    {{ titles.title(title, "", tagName) }}
+    {{ titles.title(title, titleClassName, tagName) }}
   </div>
 
 {% endmacro %}
