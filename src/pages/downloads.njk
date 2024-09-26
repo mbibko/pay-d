@@ -1,0 +1,56 @@
+{% extends 'layouts/main.njk' %}
+{% block content %}
+  <div class="mb-20">{% include "./components/header.njk" %}</div>
+  <div class="container">
+    {{ section.header('Media', "Downloads", "mb-6 md:mb-14", "h2", "max-md:text-[4.125rem] max-md:leading-tight") }}
+    <div class="">
+      {% for items in downloadsData.items %}
+        <h2 class="mb-7 text-pretty text-center text-2xl font-bold text-primary md:text-3xl">
+          {{ items.title | safe }}
+        </h2>
+        <div
+          class="mb-11 flex flex-col flex-wrap justify-center gap-8 sm:flex-row md:mb-28 md:flex-nowrap md:max-lg:gap-4"
+        >
+          {% for item in items.items %}
+            <div
+              class="flex flex-initial flex-col overflow-hidden rounded-xl border border-[#DFE2EC] shadow-[0px_0px_10px_0px_rgba(13,_34,_133,_0.05)] sm:basis-[262px]"
+            >
+              <!--  -->
+              <div
+                class="h-[109px] flex justify-between gap-2 bg-[#DFE2EC] bg-[url('/img/bg/card-download-bg.svg')] bg-cover px-[0.69rem] pt-[0.75rem]"
+              >
+                <div class="flex-1">
+                  <img class="w-[163px] mx-auto md:object-cover rounded-t-xl md:h-full" src="/img/downloads/{{ loop.index }}.jpg" alt="img" />
+                </div>
+                <div class="flex-none">
+                  <svg class="icon mb-2 ml-auto" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="#icon-pdf"></use>
+                  </svg>
+                  <div
+                    class="w-[63px] rounded-xl bg-white py-[0.75rem] pl-[0.75rem] font-mono text-[0.625rem] leading-tight text-primary"
+                  >
+                    <div class="text-xs font-bold">PDF</div>
+                    5,5MB
+                  </div>
+                </div>
+              </div>
+              <!--  -->
+              <div class="flex flex-1 flex-col gap-2 bg-white pb-8 pl-7 pr-6 pt-6">
+                <div class="mb-1 font-mono text-xl font-bold leading-tight text-primary">{{ item.title }}</div>
+                <p class="mb-2 text-sm leading-tight text-[#343434]">{{ item.text }}</p>
+                <a href="#" class="btn btn-sm btn-secondary mt-auto self-start uppercase max-xl:self-start">
+                  Download
+                  <svg class="ms-2 fill-primary" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="#icon-arr-bottom"></use>
+                  </svg>
+                </a>
+              </div>
+              <!--  -->
+            </div>
+          {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% include "./components/how-to-start.njk" %}
+{% endblock %}

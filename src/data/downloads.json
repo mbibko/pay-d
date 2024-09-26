@@ -1,0 +1,36 @@
+{
+  "downloadsData": {
+    "items": [
+      {
+        "title": "Get started with Pay-D.",
+        "items": [
+          {
+            "title": "Use Case questionnaire",
+            "text": "Use the following template and share with us your business requirements, technical setup and planned timeline. We will use them."
+          },
+          {
+            "title": "Merchant Onboarding",
+            "text": "The following documents provide a general overview of the steps and neccessary information required for onboarding your business."
+          }
+        ]
+      },
+      {
+        "title": "Documentation and product details",
+        "items": [
+          {
+            "title": "Pricing details",
+            "text": ""
+          },
+          {
+            "title": "Merchant Panel Guide",
+            "text": "The following documents provide a general overview of the steps and neccessary information required for onboarding your business."
+          },
+          {
+            "title": "API Documentation",
+            "text": ""
+          }
+        ]
+      }
+    ]
+  }
+}

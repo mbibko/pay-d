@@ -7,6 +7,15 @@ import { Pagination, Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { getSiblings } from "../helpers/helpers.js";
+import Choices from "choices.js";
+
+const choices = new Choices(".js-choice", {
+  searchEnabled: false,
+  placeholder: true,
+  classNames: {
+    containerInner: ["form-select", "form-element-with-icon"],
+  },
+});
 
 // init Swiper:
 const swiper = new Swiper(".js-hero-bottom-slider", {
@@ -60,4 +69,39 @@ document.querySelectorAll(".js-accordion").forEach((accordionWrapper) => {
       collapseEl.classList.toggle("active");
     });
   });
+});
+
+
+document.querySelectorAll(".js-modal").forEach((modalWrapper) => {
+  let buttonsTrigger = document.querySelectorAll(`[data-modal-toggle='${modalWrapper.id}']`);
+  let modalBackdrop = modalWrapper.querySelector(".modal-backdrop");
+
+  const openModal = () => {
+    modalWrapper.classList.add("active");
+    setTimeout(() => modalWrapper.classList.add("show"), 300);
+  }
+  const closeModal = () => {
+    modalWrapper.classList.remove("show");
+    setTimeout(() => {
+      modalWrapper.classList.remove("active");
+    }, 300);
+  }
+
+  console.log(buttonsTrigger);
+
+  [...buttonsTrigger].forEach((button) => {
+    button.addEventListener("click", () => {
+      if (modalWrapper.classList.contains("active")) {
+        closeModal()
+      } else {
+        openModal()
+      }
+    });
+  });
+
+  modalBackdrop.addEventListener("click", (e) => {
+    if (e.target.classList.contains("modal-backdrop")) {
+      closeModal()
+    }
+  })
 });

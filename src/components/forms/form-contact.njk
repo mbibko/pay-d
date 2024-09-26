@@ -1,0 +1,64 @@
+<form>
+  <div class="mb-6 flex flex-col sm:flex-row gap-6">
+    <div class="flex-1">
+      <label class="relative block">
+        <span class="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-5">
+          <svg class="icon fill-primary" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="#icon-user2"></use>
+          </svg>
+        </span>
+        <input type="text" class="form-input form-element-with-icon" placeholder="Your name" required />
+      </label>
+    </div>
+    <div class="flex-1">
+      <label class="relative block">
+        <span class="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-5">
+          <svg class="icon fill-primary" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="#icon-simple-email-r"></use>
+          </svg>
+        </span>
+        <input type="email" class="form-input form-element-with-icon" placeholder="Your mail address" required />
+      </label>
+    </div>
+  </div>
+
+  <div class="relative mb-6">
+    <label class="relative block">
+      <span class="pointer-events-none absolute inset-y-0 start-0 z-10 flex items-center ps-5">
+        <svg class="icon fill-primary" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+          <use xlink:href="#icon-simple-question"></use>
+        </svg>
+      </span>
+      <select class="js-choice" required data-placeholder="Subject">
+        <option value="1">General question</option>
+        <option value="2">Questions regarding the API</option>
+        <option value="3">Other</option>
+      </select>
+    </label>
+  </div>
+
+  <label class="relative block mb-6">
+    <span class="pointer-events-none absolute inset-y-0 top-6 flex ps-5">
+      <svg class="icon fill-primary" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+        <use xlink:href="#icon-simple-doc"></use>
+      </svg>
+    </span>
+    <textarea rows="6" class="form-textarea form-element-with-icon resize-none" placeholder="Your personal message…" required></textarea>
+  </label>
+
+  <div class="block mb-6">
+    <label class="inline-flex items-center">
+      <input class="form-checkbox rounded text-gray-400" type="checkbox">
+      <span class="ml-2 font-mono">I accept the <a href="#" target="_blank" class="font-bold text-primary">privacy policy</a></span>
+    </label>
+  </div>
+
+  <div class="text-end">
+    <button type="submit" class="btn btn-primary pr-3">
+      Send
+      <svg class="icon ms-2 flex-none fill-white" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+        <use xlink:href="#icon-arr"></use>
+      </svg>
+    </button>
+  </div>
+</form>

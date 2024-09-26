@@ -2,6 +2,8 @@
 @tailwind components
 @tailwind utilities
 
+@import "choices.js/src/styles/choices"
+
 @layer base
   body
     font-family: "Space Grotesk", sans-serif
@@ -31,7 +33,7 @@
 
 @layer components
   .container
-    @apply max-xs:px-3
+    //@apply max-xs:px-3
   .btn
     @apply lg:text-xl transition ease-in-out inline-flex items-center rounded-full px-5 py-[0.6rem] text-center font-bold font-mono
     .icon
@@ -73,12 +75,13 @@
         @apply lg:border-b lg:border-white
   .features-header-table-row
     & > :nth-child(2)
+      @apply max-sm:px-0 max-sm:pr-4
       & > :first-child
         @apply lg:custom-gradient-primary
         & > :first-child
           @apply max-lg:border-primary
     & > :nth-child(3)
-      @apply lg:rounded-tr-xl
+      @apply lg:rounded-tr-xl max-sm:px-0 max-sm:pl-4
       @apply before before:-left-[1px] before:top-[3rem] before:bottom-6 before:border-l-2 before:border-[#EDEEF4]
       & > :first-child
         @apply lg:custom-gradient-secondary
@@ -147,8 +150,41 @@
       &::after
         @apply size-[18px]
 
+  .form-element-focus
+    @apply transition border-transparent
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0),0 0 0 .25rem rgba(13,34,133,.25)
+  .form-element
+    @apply font-mono placeholder:text-[#343434] block w-full rounded-full border-transparent bg-gray-200 py-3 focus:form-element-focus
+  .form-element-with-icon
+    @apply pl-12 md:pl-16
+  .form-input
+    @apply form-element
+  .form-select
+    @apply form-element
+  .form-textarea
+    @apply form-element rounded-3xl py-5
 
 
+.choices
+  @apply overflow-visible
+  .form-select
+    @apply text-[#343434]
+    background-image: url('/img/svg/arrow-down-m.svg')
+    background-position: calc(100% - 20px) center
+  &.is-focused
+    .form-select
+      @apply form-element-focus
+  &::after
+    content: none !important
+  &__placeholder
+    opacity: 1
+  &__list--dropdown,
+  &__list[aria-expanded]
+    @apply border-0 rounded-2xl py-4 shadow-[0px_0px_10px_0px_rgba(13,_34,_133,_0.18)] mt-2
+    .choices__item
+      padding-left: 20px !important
+  &__list--single
+    @apply p-0
 
 @layer utilities
   .custom-gradient-primary
@@ -162,6 +198,7 @@
   .before-center
     @apply before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2
   .flex-item
+    --items-per-row: 1
     flex: 0 0 calc((100% - (var(--gap) * (var(--items-per-row) - 1))) / var(--items-per-row))
-    @media only screen and (width >= 768px)
-      --items-per-row: var(--md_items-per-row)
+    @media only screen and (width >= 560px)
+      --items-per-row: 2

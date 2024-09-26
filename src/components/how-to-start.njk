@@ -1,4 +1,4 @@
-<section class="bg-[#f9f9fa] max-md:bg-[url('/img/bg/how-to-start-mobile.svg')] bg-no-repeat bg-[length:100%_auto] pb-28 lg:pb-20 pt-20">
+<section class="bg-[#f9f9fa] bg-[url('/img/bg/how-to-start-mobile.svg')] md:bg-[url('/img/bg/how-to-start-bg.svg')] bg-no-repeat bg-[length:100%_auto] pb-28 lg:pb-20 pt-20">
   <div class="container relative z-10">
     {{ section.header('How to start with Pay-D', "Start", "mb-14 lg:mb-10 max-w-[30rem]") }}
 
@@ -20,7 +20,7 @@
         ]
       %}
         <div
-          class="first:max-md:mb-4 {% if loop.first %}custom-gradient-primary text-white{% else %}text-neutral-700{% endif %} border-color relative flex flex-initial max-md:w-[308px] basis-[290px] flex-col rounded-2xl border bg-white px-7 pb-7 pt-7 shadow-[0_0_12px_0_rgba(0,0,0,0.10)]"
+          class="first:max-md:mb-4 {% if loop.first %}custom-gradient-primary text-white{% else %}text-neutral-700{% endif %} border-color relative flex flex-initial max-md:w-[308px] md:basis-[290px] flex-col rounded-2xl border bg-white px-7 pb-7 pt-7 shadow-[0_0_12px_0_rgba(0,0,0,0.10)]"
         >
           <div class="mb-6 flex justify-between">
             <img height="40" class="h-[40px] flex-none" src="/img/features/{{ loop.index + 4 }}.png" alt="icon" />
