@@ -1,5 +1,5 @@
 <section class="bg-[#f9f9fa] bg-[url('/img/bg/how-to-start-mobile.svg')] md:bg-[url('/img/bg/how-to-start-bg.svg')] bg-no-repeat bg-[length:100%_auto] pb-28 lg:pb-20 pt-20">
-  <div class="container relative z-10">
+  <div class="container relative z-10" data-aos="fade-up" data-aos-duration="800">
     {{ section.header('How to start with Pay-D', "Start", "mb-14 lg:mb-10 max-w-[30rem]") }}
 
     <div class="mx-auto flex max-w-[67rem] max-md:flex-col max-md:items-center max-md:gap-4 justify-between gap-4 lg:gap-0">
@@ -20,6 +20,7 @@
         ]
       %}
         <div
+            data-aos="fade-up" data-aos-duration="800" data-aos-delay="{{ loop.index }}00"
           class="first:max-md:mb-4 {% if loop.first %}custom-gradient-primary text-white{% else %}text-neutral-700{% endif %} border-color relative flex flex-initial max-md:w-[308px] md:basis-[290px] flex-col rounded-2xl border bg-white px-7 pb-7 pt-7 shadow-[0_0_12px_0_rgba(0,0,0,0.10)]"
         >
           <div class="mb-6 flex justify-between">

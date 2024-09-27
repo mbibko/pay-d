@@ -1,4 +1,10 @@
 <svg width="301" height="383" viewBox="0 0 301 383" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M287.636 45.3636L294 51.7275L300.364 45.3636L298.741 43.7405L294 48.4814L289.259 43.7405L287.636 45.3636Z" fill="#33CC33"/>
 <path d="M1 382H138.5C144.023 382 148.5 377.523 148.5 372V11.5C148.5 5.97715 152.977 1.5 158.5 1.5H284C289.523 1.5 294 5.97715 294 11.5V48.5" stroke="#33CC33" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 7"/>
+    <animate
+            attributeName="stroke-dashoffset"
+            values="100;0"
+            dur="3s"
+            calcMode="linear"
+            repeatCount="indefinite" />
 </svg>

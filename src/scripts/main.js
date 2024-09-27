@@ -9,6 +9,8 @@ import "swiper/css/navigation";
 import { getSiblings } from "../helpers/helpers.js";
 import Choices from "choices.js";
 import SmoothScroll from "./smoothScroll.js";
+import AOS from "aos";
+import "aos/dist/aos.css"
 
 const choices = new Choices(".js-choice", {
   searchEnabled: false,
@@ -124,3 +126,5 @@ let navbarEl = document.querySelector(".navbar")
 window.addEventListener("scroll", (function(t) {
   t.currentTarget.pageYOffset > 500 ? navbarEl.classList.add("navbar-stuck") : navbarEl.classList.remove("navbar-stuck")
 }));
+
+AOS.init();

@@ -5,9 +5,14 @@
     {% include "./components/header.njk" %}
     {% include "./components/hero.njk" %}
   </div>
-  {% include "./components/how-it-works.njk" %}
+  <div data-aos="fade-up" data-aos-duration="800">
+    {% include "./components/how-it-works.njk" %}
+  </div>
   <div class="overflow-hidden">
-    <div id="features">{% include "./components/features.njk" %}</div>
+    <div >
+      <div id="features">
+        {% include "./components/features.njk" %}</div>
+      </div>
     <div class="relative">
       <div class="container pointer-events-none absolute inset-0 hidden h-full lg:block">
         <div class="h-full bg-[url('/img/bg/mockups-shape.svg')] bg-[0_95px] bg-no-repeat lg:w-[10000px]"></div>
