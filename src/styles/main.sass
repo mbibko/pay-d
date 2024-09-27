@@ -3,6 +3,7 @@
 @tailwind utilities
 
 @import "choices.js/src/styles/choices"
+@import "./animations"
 
 @layer base
   body
@@ -10,9 +11,11 @@
     font-optical-sizing: auto
     font-weight: 400
     font-style: normal
-    @apply bg-[url('/img/bg/hero-bg2-mobile.jpg')] bg-[length:1575px_688px] bg-no-repeat lg:bg-[url('/img/bg/hero-bg.jpg')] lg:bg-[length:100%_auto]
-    &.page > .main
-      @apply pb-10
+    &:not(.index)
+      @apply bg-[url('/img/bg/hero-bg2-mobile.jpg')] bg-[length:1575px_688px] bg-no-repeat lg:bg-[url('/img/bg/hero-bg.jpg')] lg:bg-[length:100%_auto]
+    &.page
+      & > .main
+        @apply pb-10
 
 
   .h1, .h2, .h3, .h4, .h5, .h6
@@ -39,10 +42,7 @@
     .icon
       @apply max-lg:scale-90
   .btn-primary
-    @apply text-white hover:bg-green-800
-    background: linear-gradient(291deg, #3C3 -18.14%, #309F52 93.59%)
-    &:hover
-      background: linear-gradient(291deg, #309F52 -18.14%, #3C3 93.59%)
+    @apply text-white before:ease-in-out before:duration-500 duration-500 before:-z-10 before:rounded-full transition ease-in-out before before:inset-0 before:bg-[linear-gradient(291deg,_#3C3_-18.14%,_#309F52_93.59%)] before:transition hover:before:opacity-0 hover:bg-primary
   .btn-secondary
     @apply border-2 border-primary text-primary
   .btn-sm
@@ -202,3 +202,19 @@
     flex: 0 0 calc((100% - (var(--gap) * (var(--items-per-row) - 1))) / var(--items-per-row))
     @media only screen and (width >= 560px)
       --items-per-row: 2
+
+
+.navbar.navbar-stuck
+  position: fixed !important
+  top: 0 !important
+  left: 0 !important
+  width: 100%
+  animation: navbar-show .25s
+  box-shadow: 0 1.75rem 1.875rem rgba(129,132,140,.08)
+  background-color: #fff !important
+
+@keyframes navbar-show
+  from
+    transform: translateY(-100%)
+  to
+    transform: translateY(0)

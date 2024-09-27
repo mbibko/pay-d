@@ -1,19 +1,38 @@
-<section class="pb-6 lg:pb-16">
-  <div class="container pb-8 lg:pb-4 pt-4 lg:pt-12 lg:flex">
+<section class="pb-6 lg:pb-16 overflow-hidden relative">
+  <video
+    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-full"
+    autoplay=""
+    muted=""
+    loop=""
+    style="object-fit: cover; opacity: .27;"
+  >
+    <source type="video/mp4" src="/video/video-bg.m4v" />
+  </video>
+  <div class="absolute inset-x-0 bottom-0 h-[40%]" style="background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.0001) 0%, #FFFFFF 71.2%);"></div>
+
+  <div class="container pb-8 lg:flex lg:pb-4 pt-[124px] sm:pt-[144px]">
     <!--  IMG  -->
     <div class="relative flex-none md:mr-0 lg:order-1 lg:mr-10 lg:max-h-[480px] xl:mr-0">
       <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
         <div
-          class="size-[1000px] bg-[url('/img/bg/hero-shape-mobile.svg')] bg-center bg-no-repeat lg:size-[1500px] lg:bg-[url('/img/bg/hero-shape2.svg')] lg:bg-[77%_29%]"
+          class="float size-[1000px] bg-[url('/img/bg/hero-shape-mobile.svg')] bg-center bg-no-repeat lg:size-[1500px] lg:bg-[url('/img/bg/hero-shape2.svg')] lg:bg-[77%_29%]"
         ></div>
       </div>
-      <img class="relative mx-auto max-lg:-translate-x-6" width="433" height="555" src="/img/hero-img.png" alt="mockup" />
+      <img
+        class="float-reverse relative -top-10 mx-auto max-lg:-translate-x-6"
+        width="433"
+        height="555"
+        src="/img/hero-img.png"
+        alt="mockup"
+      />
     </div>
     <!-- END IMG  -->
     <!-- CONTENT  -->
-    <div class="max-lg:-mt-4 relative z-10 flex flex-col items-center place-self-center max-lg:text-center lg:items-start">
+    <div
+      class="relative z-10 flex flex-col items-center place-self-center max-lg:-mt-4 max-lg:text-center lg:items-start"
+    >
       <h1 class="h1 mb-4 lg:font-light"><strong class="font-bold">TFS&nbsp;In&#8209;house</strong> Payment solution</h1>
-      <p class="text-gray-primary mb-6 max-w-2xl font-mono text-lg lg:mb-8 lg:text-xl leading-[1.5rem]">
+      <p class="mb-6 max-w-2xl font-mono text-lg leading-[1.5rem] text-gray-primary lg:mb-8 lg:text-xl">
         Integrated online payment <br />
         solution for your business.
       </p>
@@ -24,16 +43,16 @@
         </svg>
       </a>
       <div class="mt-10 w-full items-center gap-10 lg:mt-20 xl:flex">
-        <div class="text-gray-primary font-medium leading-4 max-xl:mb-3">
+        <div class="font-medium leading-4 text-gray-primary max-xl:mb-3">
           <span class="hidden lg:block"
             >Frequently used <br />
             payment methods:</span
           >
-          <span class="lg:hidden font-mono text-lg">We provide</span>
+          <span class="font-mono text-lg lg:hidden">We provide</span>
         </div>
-        <div class="flex gap-1 xs:gap-2 items-center max-lg:max-w-[370px] max-lg:mx-auto">
+        <div class="xs:gap-2 flex items-center gap-1 max-lg:mx-auto max-lg:max-w-[370px]">
           {% for item in ["amex", "apple-pay", "g-pay", "mastercard", "paypal", "visa"] %}
-            <svg class="lg:w-[60px] h-[38px]" xmlns="http://www.w3.org/2000/svg">
+            <svg class="h-[38px] lg:w-[60px]" xmlns="http://www.w3.org/2000/svg">
               <use xlink:href="#icon-payments-{{ item }}"></use>
             </svg>
           {% endfor %}
@@ -43,17 +62,19 @@
     <!-- END CONTENT  -->
   </div>
   <div class="container">
-    <hr class="border-primary mb-6 lg:mb-10 max-w-[820px] opacity-20" />
+    <hr class="mb-6 max-w-[820px] border-primary opacity-20 lg:mb-10" />
     <div class="max-w-[1140px]">
-      <div class="js-hero-bottom-slider !px-8 swiper">
+      <div class="js-hero-bottom-slider swiper !px-8">
         <div class="swiper-wrapper">
           {% for item in ["Safe, reliable <br> and easy to use", "Control & ownership <br> of customer data", "Easy API-based <br> setup & onboarding", "Secure &<br> compliant"] %}
             <div class="swiper-slide lg:last:pl-12">
-              <div
-                class="flex flex-1 flex-col items-center justify-center gap-5   lg:flex-row"
-              >
+              <div class="flex flex-1 flex-col items-center justify-center gap-5 lg:flex-row">
                 <img height="68" class="h-[68px] flex-none" src="/img/features/{{ loop.index }}.png" alt="icon" />
-                <span class="max-lg:text-center max-lg:text-lg text-primary font-medium max-lg:leading-5 lg:leading-4 text-balance"> {{ item | safe }} </span>
+                <span
+                  class="text-balance font-medium text-primary max-lg:text-center max-lg:text-lg max-lg:leading-5 lg:leading-4"
+                >
+                  {{ item | safe }}
+                </span>
               </div>
             </div>
           {% endfor %}

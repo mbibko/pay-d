@@ -115,7 +115,12 @@ document.querySelectorAll("[data-scroll]").forEach(function (link) {
 
     if (goToEl) {
       event.preventDefault();
-      SmoothScroll(goTo, 1200);
+      SmoothScroll(goToEl, 1200, -80);
     }
   });
 });
+
+let navbarEl = document.querySelector(".navbar")
+window.addEventListener("scroll", (function(t) {
+  t.currentTarget.pageYOffset > 500 ? navbarEl.classList.add("navbar-stuck") : navbarEl.classList.remove("navbar-stuck")
+}));

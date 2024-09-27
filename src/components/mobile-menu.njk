@@ -8,19 +8,48 @@
     <div class="mt-6 flow-root">
       <div class="-my-6 divide-y divide-gray-500/10">
         <div class="space-y-2 py-6">
-          <ul>
-            {% for item in ["Our Features", "About us", "Contact"] %}
-              <li class="uppercase">
-                <a
-                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  href="#"
-                  {% if item === "Contact" %}
-                    data-modal-toggle="modal-contact"
-                  {% endif %}
-                  >{{ item | safe }}</a
-                >
-              </li>
-            {% endfor %}
+          <ul class="uppercase">
+            <li>
+              <a
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                data-scroll href="/#features"
+                onclick="document.getElementById('mobile-nav').classList.toggle('hidden');"
+                >Features</a
+              >
+            </li>
+            <li>
+              <a
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                href="/features"
+                onclick="document.getElementById('mobile-nav').classList.toggle('hidden');"
+                >Products</a
+              >
+            </li>
+            <li>
+              <a
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                data-scroll href="/#how-to-start"
+                onclick="document.getElementById('mobile-nav').classList.toggle('hidden');"
+                >How to start</a
+              >
+            </li>
+            <li>
+              <a
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                href="/downloads"
+                onclick="document.getElementById('mobile-nav').classList.toggle('hidden');"
+                >Downloads</a
+              >
+            </li>
+            <li>
+              <a
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                href="#"
+                data-modal-toggle="modal-contact"
+                onclick="document.getElementById('mobile-nav').classList.toggle('hidden');"
+                >Contact</a
+              >
+            </li>
           </ul>
         </div>
       </div>

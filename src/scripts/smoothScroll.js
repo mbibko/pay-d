@@ -1,14 +1,13 @@
-export default function SmoothScroll(target, duration) {
-  var target = document.querySelector(target);
-  var targetPosition = target.getBoundingClientRect().top;
-  var startPosition = window.scrollY;
-  var distance = targetPosition - startPosition;
-  var startTime = null;
+export default function SmoothScroll(target, duration, offset) {
+  let targetPosition = target.getBoundingClientRect().top;
+  let startPosition = window.scrollY;
+  let distance = targetPosition + offset;
+  let startTime = null;
 
   function animation(currentTime) {
     if (startTime === null) startTime = currentTime;
-    var timeElapsed = currentTime - startTime;
-    var run = easing(timeElapsed, startPosition, distance, duration);
+    let timeElapsed = currentTime - startTime;
+    let run = easing(timeElapsed, startPosition, distance, duration);
     window.scrollTo(0, run);
     if (timeElapsed < duration) requestAnimationFrame(animation);
   }
