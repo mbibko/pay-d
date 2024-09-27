@@ -8,6 +8,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { getSiblings } from "../helpers/helpers.js";
 import Choices from "choices.js";
+import SmoothScroll from "./smoothScroll.js";
 
 const choices = new Choices(".js-choice", {
   searchEnabled: false,
@@ -84,7 +85,7 @@ document.querySelectorAll(".js-modal").forEach((modalWrapper) => {
     setTimeout(() => {
       modalWrapper.classList.remove("active");
     }, 300);
-  }
+  };
 
   modalWrapper.openModal = openModal;
   modalWrapper.closeModal = closeModal;
@@ -102,6 +103,19 @@ document.querySelectorAll(".js-modal").forEach((modalWrapper) => {
   modalBackdrop.addEventListener("click", (e) => {
     if (e.target.classList.contains("modal-backdrop")) {
       closeModal();
+    }
+  });
+});
+
+document.querySelectorAll("[data-scroll]").forEach(function (link) {
+  link.addEventListener("click", function (event) {
+    let goTo = link.getAttribute("href").slice(1);
+    console.log(goTo);
+    let goToEl = document.querySelector(goTo);
+
+    if (goToEl) {
+      event.preventDefault();
+      SmoothScroll(goTo, 1200);
     }
   });
 });
