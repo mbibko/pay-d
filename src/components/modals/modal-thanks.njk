@@ -1,0 +1,16 @@
+{% set id = "thanks" %}
+{%- call modal.modal({id: id, bodyClass: "sm:max-w-[551px]"}) -%}
+  <div
+    class="flex flex-col gap-6 items-center justify-center rounded-lg shadow-[0_0_15px_0_rgba(0,0,0,0.40)] bg-secondary bg-[url(/img/bg/modal-thanks-bg.jpg)] bg-cover bg-center bg-no-repeat py-10 text-center text-white sm:min-h-[480px]"
+  >
+    <img src="/img/check.png" width="115" height="105" alt="icon">
+    <h4 class="h4 font-bold text-white">Thank you for <br> your message</h4>
+    <p class="md:text-md"> We will reply as soon as possible. </p>
+    <button class="btn btn-secondary text-white border-white" data-modal-toggle="modal-{{ id }}">
+      Close
+      <svg class="ms-2 fill-white" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+        <use xlink:href="#icon-close"></use>
+      </svg>
+    </button>
+  </div>
+{%- endcall -%}

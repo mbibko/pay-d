@@ -1,4 +1,4 @@
-<form>
+<form id="form-contact">
   <div class="mb-6 flex flex-col sm:flex-row gap-6">
     <div class="flex-1">
       <label class="relative block">
@@ -7,7 +7,7 @@
             <use xlink:href="#icon-user2"></use>
           </svg>
         </span>
-        <input type="text" class="form-input form-element-with-icon" placeholder="Your name" required />
+        <input type="text" name="name" class="form-input form-element-with-icon" placeholder="Your name" required />
       </label>
     </div>
     <div class="flex-1">
@@ -17,7 +17,7 @@
             <use xlink:href="#icon-simple-email-r"></use>
           </svg>
         </span>
-        <input type="email" class="form-input form-element-with-icon" placeholder="Your mail address" required />
+        <input type="email" name="email" class="form-input form-element-with-icon" placeholder="Your mail address" required />
       </label>
     </div>
   </div>
@@ -29,7 +29,7 @@
           <use xlink:href="#icon-simple-question"></use>
         </svg>
       </span>
-      <select class="js-choice" required data-placeholder="Subject">
+      <select name="subject" class="js-choice" required data-placeholder="Subject">
         <option value="1">General question</option>
         <option value="2">Questions regarding the API</option>
         <option value="3">Other</option>
@@ -43,12 +43,12 @@
         <use xlink:href="#icon-simple-doc"></use>
       </svg>
     </span>
-    <textarea rows="6" class="form-textarea form-element-with-icon resize-none" placeholder="Your personal message…" required></textarea>
+    <textarea name="message" rows="6" class="form-textarea form-element-with-icon resize-none" placeholder="Your personal message…" required></textarea>
   </label>
 
   <div class="block mb-6">
     <label class="inline-flex items-center">
-      <input class="form-checkbox rounded text-gray-400" type="checkbox">
+      <input class="form-checkbox rounded text-gray-400" type="checkbox" required>
       <span class="ml-2 font-mono">I accept the <a href="#" target="_blank" class="font-bold text-primary">privacy policy</a></span>
     </label>
   </div>
@@ -62,3 +62,12 @@
     </button>
   </div>
 </form>
+
+
+<script>
+  document.querySelector("#form-contact").addEventListener("submit", (e) => {
+    e.preventDefault();
+    document.querySelector("#modal-contact").closeModal();
+    document.querySelector("#modal-thanks").openModal();
+  });
+</script>

@@ -71,7 +71,6 @@ document.querySelectorAll(".js-accordion").forEach((accordionWrapper) => {
   });
 });
 
-
 document.querySelectorAll(".js-modal").forEach((modalWrapper) => {
   let buttonsTrigger = document.querySelectorAll(`[data-modal-toggle='${modalWrapper.id}']`);
   let modalBackdrop = modalWrapper.querySelector(".modal-backdrop");
@@ -79,7 +78,7 @@ document.querySelectorAll(".js-modal").forEach((modalWrapper) => {
   const openModal = () => {
     modalWrapper.classList.add("active");
     setTimeout(() => modalWrapper.classList.add("show"), 300);
-  }
+  };
   const closeModal = () => {
     modalWrapper.classList.remove("show");
     setTimeout(() => {
@@ -87,21 +86,22 @@ document.querySelectorAll(".js-modal").forEach((modalWrapper) => {
     }, 300);
   }
 
-  console.log(buttonsTrigger);
+  modalWrapper.openModal = openModal;
+  modalWrapper.closeModal = closeModal;
 
   [...buttonsTrigger].forEach((button) => {
     button.addEventListener("click", () => {
       if (modalWrapper.classList.contains("active")) {
-        closeModal()
+        closeModal();
       } else {
-        openModal()
+        openModal();
       }
     });
   });
 
   modalBackdrop.addEventListener("click", (e) => {
     if (e.target.classList.contains("modal-backdrop")) {
-      closeModal()
+      closeModal();
     }
-  })
+  });
 });

@@ -1,6 +1,7 @@
 {% import "../components/elements/titles.njk" as titles %}
 {% import "../components/elements/buttons.njk" as buttons %}
 {% import "../components/elements/section.njk" as section %}
+{% import "../components/elements/modal.njk" as modal %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -22,6 +23,7 @@
     </main>
     {% include "../components/footer.njk" %}
     {% include "../components/modals/modal-contact.njk" %}
+    {% include "../components/modals/modal-thanks.njk" %}
     <script type="module" src="/src/scripts/main.js"></script>
   </body>
 </html>
