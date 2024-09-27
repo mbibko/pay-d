@@ -7,7 +7,7 @@
         for item in [
         {
         title: "Finding a solution",
-        text: 'Let\'s discuss your individual  requirements to understand your goals. If possible, please complete the following <span class="underline">questionnaire</span> and email it to us directly.'
+        text: 'Let\'s discuss your individual  requirements to understand your goals. If possible, please complete the following <a href="#" class="underline text-primary">questionnaire</a> and email it to us directly.'
         },
         {
         title: "Integration & onboarding",
@@ -21,16 +21,16 @@
       %}
         <div
             data-aos="fade-up" data-aos-duration="800" data-aos-delay="{{ loop.index }}00"
-          class="first:max-md:mb-4 {% if loop.first %}custom-gradient-primary text-white{% else %}text-neutral-700{% endif %} border-color relative flex flex-initial max-md:w-[308px] md:basis-[290px] flex-col rounded-2xl border bg-white px-7 pb-7 pt-7 shadow-[0_0_12px_0_rgba(0,0,0,0.10)]"
+          class="before:-z-10 group [&:hover_a]:text-white first:max-md:mb-4 hover:text-white text-neutral-700 border-color relative flex flex-initial max-md:w-[308px] md:basis-[290px] flex-col rounded-2xl before:rounded-2xl border bg-white px-7 pb-7 pt-7 shadow-[0_0_12px_0_rgba(0,0,0,0.10)] before before:inset-0 before:custom-gradient-primary before:opacity-0 hover:before:opacity-100 before:transition before:duration-500"
         >
           <div class="mb-6 flex justify-between">
             <img height="40" class="h-[40px] flex-none" src="/img/features/{{ loop.index + 4 }}.png" alt="icon" />
-            <span class="{% if loop.first %}text-white{% else %}text-primary{% endif %} font-mono text-4xl opacity-40"
+            <span class="group-hover:text-white text-primary font-mono text-4xl opacity-40"
               >{{ loop.index }}</span
             >
           </div>
           <div
-            class="{% if loop.first %}text-white{% else %}text-primary{% endif %} mb-4 font-mono text-lg font-bold leading-tight"
+            class="group-hover:text-white text-primary mb-4 font-mono text-lg font-bold leading-tight"
           >
             {{ item.title }}
           </div>
