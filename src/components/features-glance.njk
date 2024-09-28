@@ -3,6 +3,7 @@
 {% for item in featuresData.items %}
   {% if item.id !== "pricing" %}
     <div
+      data-aos="fade-up"
       class="group mb-2 flex flex-col items-center justify-between gap-10 rounded-2xl py-6 odd:bg-white odd:px-6 max-lg:odd:shadow-[0px_0px_15px_0px_rgba(0,_0,_0,_0.05)] lg:mb-8 lg:flex-row lg:py-16 lg:odd:shadow-[0px_0px_15px_0px_rgba(0,_0,_0,_0.05)] lg:odd:px-10"
     >
       <div class="flex-[0_1_57%] md:group-odd:first:order-1">
@@ -30,7 +31,9 @@
               {% for listItem in item.list %}
                 {% set isStandard = listItem[0] %}
                 {% set isAdvanced = listItem[1] %}
-                <li class="mb-3 flex [&:not(:last-child)]:border-b pb-3">
+                <li
+                    data-aos="fade-up" data-aos-delay="{{ loop.index + 1 }}00"
+                    class="mb-3 flex [&:not(:last-child)]:border-b pb-3">
                   <span
                     class="circles is-inverted {% if isStandard %}is-standard{% endif %} {% if isAdvanced %}is-advanced{% endif %} mr-2 mt-1 flex-none"
                   ></span

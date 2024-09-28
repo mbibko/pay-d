@@ -12,40 +12,47 @@
           <span class="circles is-advanced is-md"></span> Advanced product
         </div>
       </div>
+
       <div
         class="mb-20 lg:mb-32 flex flex-wrap sm:-mx-2 md:-mx-4 gap-y-8 sm:max-md:gap-y-4"
       >
         {% for item in featuresData.items %}
           {% if item.id !== "pricing" %}
-            <div class="sm:px-2 md:px-4 flex-none w-full sm:w-1/2">
+            <div class="sm:px-2 md:px-4 flex-none w-full sm:w-1/2"
+                 data-aos="fade" data-aos-easing="ease" data-aos-delay="{{ loop.index + 2 }}00"
+{#                 data-aos-anchor=".fea-anchor-selector"#}
+            >
               <div
                   style="--image-url: url('/img/bg/card-bg/card-{{ loop.index - 1 }}.jpg')"
-                  class="flex flex-col gap-4 overflow-hidden rounded-[20px] bg-[#DFE2EC] bg-[image:var(--image-url)] bg-cover p-8 sm:px-4 sm:py-6 md:p-8 xl:flex-row xl:items-center xl:justify-between"
+                  class="group relative transition duration-500 hover:bg-primary  overflow-hidden rounded-[20px] text-primary hover:text-white bg-[#DFE2EC]"
               >
-                <div class="flex gap-6 sm:gap-3 md:gap-6">
-                  <!--  -->
-                  <div class="relative flex size-[64px] flex-none items-center justify-center rounded-xl bg-white">
-                    {% set isStandard = item.data[0].included %}
-                    {% set isAdvanced = item.data[1].included %}
-                    <span class="absolute left-[-2px] top-[-8px] z-0">
+                <div class="group-hover:opacity-0 absolute inset-0 pointer-events-none bg-[image:var(--image-url)] bg-cover"></div>
+                <div class="relative flex flex-col gap-4 p-8 sm:px-4 sm:py-6 md:p-8 xl:flex-row xl:items-center xl:justify-between">
+                  <div class="flex gap-6 sm:gap-3 md:gap-6">
+                    <!--  -->
+                    <div class="relative flex size-[64px] flex-none items-center justify-center rounded-xl bg-white">
+                      {% set isStandard = item.data[0].included %}
+                      {% set isAdvanced = item.data[1].included %}
+                      <span class="absolute left-[-2px] top-[-8px] z-0">
                     <span
                         class="circles is-lg {% if isStandard %}is-standard{% endif %} {% if isAdvanced %}is-advanced{% endif %}"
                     ></span>
                   </span>
-                    <svg class="flex-none fill-primary" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
-                      <use xlink:href="#icon-simple-{{ item.icon }}"></use>
+                      <svg class="flex-none fill-primary" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+                        <use xlink:href="#icon-simple-{{ item.icon }}"></use>
+                      </svg>
+                    </div>
+                    <div class="max-w-min font-mono text-xl font-bold">
+                      {{ item.altTitle or item.title | safe }}
+                    </div>
+                  </div>
+                  <a href="#" class="btn btn-sm btn-secondary max-xl:self-start group-hover:text-white group-hover:border-white">
+                    LEARN&nbsp;MORE
+                    <svg class="ms-2 fill-primary group-hover:fill-white" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                      <use xlink:href="#icon-arr"></use>
                     </svg>
-                  </div>
-                  <div class="max-w-min font-mono text-xl font-bold text-primary">
-                    {{ item.altTitle or item.title | safe }}
-                  </div>
+                  </a>
                 </div>
-                <a href="#" class="btn btn-sm btn-secondary max-xl:self-start">
-                  LEARN&nbsp;MORE
-                  <svg class="ms-2 fill-primary" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
-                    <use xlink:href="#icon-arr"></use>
-                  </svg>
-                </a>
               </div>
             </div>
           {% endif %}
@@ -53,7 +60,8 @@
       </div>
     </div>
   </div>
-  <div class="xl:mb-20 bg-[url('/img/bg/decor-mobile.svg')] lg:bg-[url('/img/bg/decor.svg')] bg-[length:100%_auto] max-xs:bg-[0px_80px] bg-no-repeat">
+  <div class="relative xl:mb-20">
+    <div data-parallax-distance="500" class="parallax-me pointer-events-none absolute inset-0 bg-[url('/img/bg/decor-mobile.svg')] lg:bg-[url('/img/bg/decor.svg')] bg-[length:100%_auto] max-xs:bg-[0px_80px] bg-no-repeat"></div>
     <div class="container">
       {{ section.header('Our features at a glance', "Our Features in detail", "mb-0", "h2") }}
       {% include "./components/features-glance.njk" %}
