@@ -12,6 +12,7 @@ import SmoothScroll from "./smoothScroll.js";
 import AOS from "aos";
 import "aos/dist/aos.css"
 import "./accordion.js"
+import "./animations.js"
 
 const choices = new Choices(".js-choice", {
   searchEnabled: false,
