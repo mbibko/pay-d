@@ -1,5 +1,5 @@
 <div
-    data-aos="fade-up" data-aos-duration="800" data-aos-delay="1600"
+    data-aos="fade-up" data-aos-duration="800" data-aos-delay="1600" data-aos-anchor=".hw-anchor-selector"
   class="mx-auto -mt-6 max-w-[20rem] rounded-2xl bg-gray-200 bg-[url('/img/bg/card-wrapper.jpg')] bg-cover px-6 pb-6 pt-8 md:max-w-[45rem]"
 >
   <div class="mb-6 text-center">
@@ -23,7 +23,9 @@
         }
       ]
     %}
-      <div class="relative flex flex-1 flex-col gap-1 rounded-xl bg-white p-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="2{{ loop.index }}00">
+      <div class="relative flex flex-1 flex-col gap-1 rounded-xl bg-white p-4"
+           data-aos="fade-up" data-aos-duration="800" data-aos-delay="2{{ loop.index }}00" data-aos-anchor=".hw-anchor-selector"
+      >
         <span class="absolute right-2 top-2 text-3xl font-bold text-neutral-200">{{ loop.index }}</span>
         <div class="font-bold">{{ item.title }}</div>
         <span class="text-sm text-neutral-700 max-lg:-mt-1">{{ item.text }}</span>
