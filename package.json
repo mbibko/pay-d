@@ -22,7 +22,7 @@
     "vituum": "^1.1.1"
   },
   "dependencies": {
-    "@preline/accordion": "^2.5.0",
+    "accordion-js": "^3.3.4",
     "aos": "^2.3.4",
     "choices.js": "^11.0.2",
     "flowbite": "^2.5.2",

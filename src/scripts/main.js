@@ -11,6 +11,7 @@ import Choices from "choices.js";
 import SmoothScroll from "./smoothScroll.js";
 import AOS from "aos";
 import "aos/dist/aos.css"
+import "./accordion.js"
 
 const choices = new Choices(".js-choice", {
   searchEnabled: false,
@@ -130,6 +131,3 @@ if (navbarEl) {
 }
 
 AOS.init();
-
-import "./accordion.js"
-// import "@preline/accordion"
