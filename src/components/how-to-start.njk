@@ -1,8 +1,12 @@
-<section class="bg-[#f9f9fa] bg-[url('/img/bg/how-to-start-mobile.svg')] md:bg-[url('/img/bg/how-to-start-bg.svg')] bg-no-repeat bg-[length:100%_auto] pb-28 lg:pb-20 pt-20">
+<section
+  class="bg-[#f9f9fa] bg-[url('/img/bg/how-to-start-mobile.svg')] bg-[length:100%_auto] bg-no-repeat pb-28 pt-20 md:bg-[url('/img/bg/how-to-start-bg.svg')] lg:pb-20"
+>
   <div class="container relative z-10" data-aos="fade-up" data-aos-duration="800">
     {{ section.header('How to start with Pay-D', "Start", "mb-14 lg:mb-10 max-w-[30rem]") }}
 
-    <div class="mx-auto flex max-w-[67rem] max-md:flex-col max-md:items-center max-md:gap-4 justify-between gap-4 lg:gap-0">
+    <div
+      class="mx-auto flex max-w-[67rem] justify-between gap-4 max-md:flex-col max-md:items-center max-md:gap-4 lg:gap-0"
+    >
       {%
         for item in [
         {
@@ -20,30 +24,35 @@
         ]
       %}
         <div
-            data-aos="fade-up" data-aos-duration="800" data-aos-delay="{{ loop.index }}00"
-          class="before:-z-10 group [&:hover_a]:text-white first:max-md:mb-4 hover:text-white text-neutral-700 border-color relative flex flex-initial max-md:w-[308px] md:basis-[290px] flex-col rounded-2xl before:rounded-2xl border bg-white px-7 pb-7 pt-7 shadow-[0_0_12px_0_rgba(0,0,0,0.10)] before before:inset-0 before:custom-gradient-primary before:opacity-0 hover:before:opacity-100 before:transition before:duration-500"
+          data-aos="fade-up"
+          data-aos-duration="800"
+          data-aos-delay="{{ loop.index }}00"
+          class="group border-color before before:custom-gradient-primary group relative flex flex-initial flex-col rounded-2xl border bg-white px-7 pb-7 pt-7 text-neutral-700 shadow-[0_0_12px_0_rgba(0,0,0,0.10)] before:inset-0 before:-z-10 before:rounded-2xl before:opacity-0 before:transition before:duration-500 hover:text-white hover:before:opacity-100 max-md:w-[308px] first:max-md:mb-4 md:basis-[290px] [&:hover_a]:text-white"
         >
           <div class="mb-6 flex justify-between">
             <img height="40" class="h-[40px] flex-none" src="/img/features/{{ loop.index + 4 }}.png" alt="icon" />
-            <span class="group-hover:text-white text-primary font-mono text-4xl opacity-40"
-              >{{ loop.index }}</span
-            >
+            <span class="font-mono text-4xl text-primary opacity-40 group-hover:text-white">{{ loop.index }}</span>
           </div>
-          <div
-            class="group-hover:text-white text-primary mb-4 font-mono text-lg font-bold leading-tight"
-          >
+          <div class="mb-4 font-mono text-lg font-bold leading-tight text-primary group-hover:text-white">
             {{ item.title }}
           </div>
           <span class="text-sm leading-tight">{{ item.text | safe }}</span>
-          {% if loop.first %}
             <div
-              class="custom-gradient-secondary absolute bottom-0 left-1/2 z-10 flex size-[40px] -translate-x-2/4 translate-y-2/4 place-items-center rounded-full"
+              type="button"
+              data-site-modal-toggle="modal-contact"
+              class="opacity-0 transition duration-500 delay-200 group-hover:opacity-100 custom-gradient-secondary group/item absolute bottom-0 left-1/2 z-10 flex h-[40px] -translate-x-2/4 translate-y-2/4 cursor-pointer items-center rounded-full px-3"
             >
-              <svg class="m-auto flex-none fill-white" width="18" height="14" xmlns="http://www.w3.org/2000/svg">
-                <use xlink:href="#icon-simple-email-r"></use>
-              </svg>
+              <div
+                class="w-0 overflow-hidden whitespace-nowrap text-center text-white transition-all duration-500 group-hover/item:w-[110px]"
+              >
+                CONTACT US
+              </div>
+              <div class="flex">
+                <svg class="m-auto flex-none fill-white" width="18" height="14" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="#icon-simple-email-r"></use>
+                </svg>
+              </div>
             </div>
-          {% endif %}
         </div>
 
         {% if loop.last !== true %}
