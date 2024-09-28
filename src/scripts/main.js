@@ -9,8 +9,6 @@ import "swiper/css/navigation";
 import { getSiblings } from "../helpers/helpers.js";
 import Choices from "choices.js";
 import SmoothScroll from "./smoothScroll.js";
-import AOS from "aos";
-import "aos/dist/aos.css"
 import "./accordion.js"
 import "./animations.js"
 
@@ -131,4 +129,3 @@ if (navbarEl) {
   }));
 }
 
-AOS.init();

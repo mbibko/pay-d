@@ -25,19 +25,22 @@
             }
           ]
         %}
-          <div class="group relative flex min-h-[150px] gap-5">
+          <div
+              data-aos="fade" data-aos-delay="{{ loop.index + 2 }}00"
+              class="group relative flex min-h-[150px] gap-5">
             <!--  -->
             <div
-              class="border-[rgba(39, 61, 166, 0.19)] group-first:custom-gradient-primary relative flex size-[70px] flex-none items-center justify-center rounded-xl border bg-white shadow-[0px_0px_15px_rgba(0,_0,_0,_0.10)] md:size-[93px]"
+              class="border-[rgba(39, 61, 166, 0.19)]  relative flex size-[70px] flex-none items-center justify-center rounded-xl border bg-white shadow-[0px_0px_15px_rgba(0,_0,_0,_0.10)] md:size-[93px]"
             >
+              <div class="transition duration-500 absolute inset-0 opacity-0 group-hover:opacity-100 custom-gradient-primary pointer-events-none rounded-xl"></div>
               <img
                 height="40"
-                class="h-[30px] flex-none md:h-[40px]"
+                class="relative h-[30px] flex-none md:h-[40px]"
                 src="/img/onboarding/{{ loop.index }}.png"
                 alt="icon"
               />
               <span
-                class="absolute left-1/2 top-full flex size-[34px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[linear-gradient(328deg,_#C0C0C0_4.53%,_#515879_98.06%)] font-mono text-lg font-bold text-white group-first:bg-gradient-to-b group-first:from-[#b7bdd8] group-first:to-[#f2f2f3] group-first:text-primary group-first:shadow-[0px_0px_15px_rgba(0,_0,_0,_0.50)]"
+                class="transition duration-500 absolute left-1/2 top-full flex size-[34px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[linear-gradient(328deg,_#C0C0C0_4.53%,_#515879_98.06%)] font-mono text-lg font-bold text-white group-hover:bg-gradient-to-b group-hover:from-[#b7bdd8] group-hover:to-[#f2f2f3] group-hover:text-primary group-hover:shadow-[0px_0px_15px_rgba(0,_0,_0,_0.50)]"
                 >{{ loop.index }}</span
               >
             </div>
@@ -67,7 +70,9 @@
         {% endfor %}
       </div>
 
-      <div class="custom-gradient-primary card-bg-before rounded-xl px-8 py-6 text-white">
+      <div
+          data-aos="fade-up"
+          class="custom-gradient-primary card-bg-before rounded-xl px-8 py-6 text-white">
         <div class="relative">
           <img height="68" class="mb-6 block h-[46px]" src="/img/features/5.png" alt="icon" />
           <div class="mb-1 font-mono text-lg font-bold">Get in touch</div>
