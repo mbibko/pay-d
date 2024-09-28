@@ -20,3 +20,20 @@
 
 .float-reverse
   animation: float-reverse 6s ease-in-out infinite
+
+
+.animated-dash-line
+  stroke-dasharray: 100
+  stroke-dashoffset: 100
+  direction: revert
+  animation: dashoffset-animation 3s linear infinite
+
+@keyframes dashoffset-animation
+  0%
+    stroke-dashoffset: 100
+  100%
+    stroke-dashoffset: 0
+
+.animation-direction-reverse
+  animation-direction: reverse
+
