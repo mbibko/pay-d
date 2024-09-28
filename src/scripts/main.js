@@ -11,6 +11,7 @@ import Choices from "choices.js";
 import SmoothScroll from "./smoothScroll.js";
 import AOS from "aos";
 import "aos/dist/aos.css"
+import "./accordion.js"
 
 const choices = new Choices(".js-choice", {
   searchEnabled: false,
@@ -75,7 +76,7 @@ document.querySelectorAll(".js-accordion").forEach((accordionWrapper) => {
 });
 
 document.querySelectorAll(".js-modal").forEach((modalWrapper) => {
-  let buttonsTrigger = document.querySelectorAll(`[data-modal-toggle='${modalWrapper.id}']`);
+  let buttonsTrigger = document.querySelectorAll(`[data-site-modal-toggle='${modalWrapper.id}']`);
   let modalBackdrop = modalWrapper.querySelector(".modal-backdrop");
 
   const openModal = () => {
@@ -122,9 +123,11 @@ document.querySelectorAll("[data-scroll]").forEach(function (link) {
   });
 });
 
-let navbarEl = document.querySelector(".navbar")
-window.addEventListener("scroll", (function(t) {
-  t.currentTarget.pageYOffset > 500 ? navbarEl.classList.add("navbar-stuck") : navbarEl.classList.remove("navbar-stuck")
-}));
+let navbarEl = document.querySelector(".navbar");
+if (navbarEl) {
+  window.addEventListener("scroll", (function(t) {
+    t.currentTarget.pageYOffset > 500 ? navbarEl.classList.add("navbar-stuck") : navbarEl.classList.remove("navbar-stuck")
+  }));
+}
 
 AOS.init();

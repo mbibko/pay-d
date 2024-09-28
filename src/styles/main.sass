@@ -56,7 +56,7 @@
     @apply flex gap-4 text-xs uppercase font-bold tracking-widest flex-col items-center justify-center rounded-full text-center text-white
 
   .accordion-content
-    @apply overflow-hidden transition-[height] duration-300 [&:not(.active)]:h-0
+    //@apply overflow-hidden transition-[height] duration-300 [&:not(.active)]:h-0
   .border-color
     border-color: rgba(39, 61, 166, 0.20)
 
@@ -220,3 +220,10 @@
     transform: translateY(-100%)
   to
     transform: translateY(0)
+
+
+//.accordion-collapse-heading
+.accordion-collapse-body
+  @apply overflow-hidden transition-all duration-500
+  &.hidden
+    display: block
