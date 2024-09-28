@@ -45,7 +45,11 @@
     .icon
       @apply max-lg:scale-90
   .btn-primary
-    @apply text-white before:ease-in-out before:duration-500 duration-500 before:-z-10 before:rounded-full transition ease-in-out before before:inset-0 before:bg-[linear-gradient(291deg,_#3C3_-18.14%,_#309F52_93.59%)] before:transition hover:before:opacity-0 hover:bg-primary
+    isolation: isolate
+    @apply before text-white duration-500 transition ease-in-out hover:before:opacity-0 hover:bg-primary
+    &::before
+      z-index: -1
+      @apply inset-0 ease-in-out duration-500 rounded-full bg-[linear-gradient(291deg,_#3C3_-18.14%,_#309F52_93.59%)] transition
   .btn-secondary
     @apply border-2 border-primary text-primary
   .btn-sm
