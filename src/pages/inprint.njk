@@ -1,0 +1,42 @@
+{% extends 'layouts/main.njk' %}
+{% block content %}
+  <div class="mb-20">{% include "./components/header.njk" %}</div>
+  <div class="container">
+    {{ titles.title("Imprint", "mb-10", "h1") }}
+    <div class="">
+      <h2 class="mb-10 text-center font-mono text-2xl font-bold text-primary">Information according to §5 TMG</h2>
+
+      <div class="flex flex-wrap gap-y-4 md:gap-y-8 sm:-mx-2 md:-mx-4 mb-10 md:mb-20">
+        {% for item in imprintData["5TMG"] %}
+          <div class="w-full flex-none sm:w-1/2 md:w-1/3 sm:px-2 md:px-4">
+            <div class="text-md h-full border-l-2 border-[#e6e8ed] px-4">
+              {% if item.title %}
+                <b>{{ item.title | safe }}</b>
+                <br />
+              {% endif %}
+              <p class="text-pretty">{{ item.text | safe }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+
+      <div class="flex flex-wrap gap-y-8 sm:-mx-2 md:-mx-4 mb-20">
+        {% for item in imprintData.other %}
+          <div class="w-full flex-none md:w-1/2 sm:px-2 md:px-4">
+            <div class="h-full rounded-xl bg-[#f8f8f8] p-10 pb-4">
+              {% if item.title %}
+                <h3 class="h5 font-bold mb-4 text-2xl">{{ item.title | safe }}</h3>
+              {% endif %}
+              <div class="text-[0.95rem] [&_p]:mb-4 text-[#343434]">
+                {{ item.text | safe }}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+
+    </div>
+  </div>
+{% endblock %}
