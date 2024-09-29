@@ -2,7 +2,7 @@
 {% block content %}
   <div class="container my-auto py-10">
     <div class="mx-auto max-w-[690px]">
-      <div class="flex justify-center items-center gap-8 mb-10">
+      <div class="mb-10 flex items-center justify-center gap-8">
         <div>
           <a href="/" class="block h-full"
             ><span class="sr-only">Pay-D</span>
@@ -16,10 +16,10 @@
         </svg>
       </div>
       <div
-        class="flex flex-col items-center rounded-2xl bg-white px-6 py-10 md:p-16 shadow-[0px_0px_15px_0px_rgba(0,_0,_0,_0.05)]"
+        class="flex flex-col items-center rounded-2xl bg-white px-6 py-16 shadow-[0px_0px_15px_0px_rgba(0,_0,_0,_0.05)] md:p-16"
       >
         {{ section.header('Get access', "Welcome", "mb-6", "h2", "") }}
-        <div class="max-w-[400px] mb-6">
+        <div class="mb-6 max-w-[400px]">
           <p class="text-pretty text-center text-[#5D5D5D]">
             Dear Visitor, Pay-D is only accessible for authorized Employees of Toyota Companies.
           </p>
@@ -27,27 +27,45 @@
             To get access, you need to enter a valid Toyota E&#8209;Mail address in the following fields:
           </p>
         </div>
-        <form action="/" class="flex flex-wrap max-w-[465px] gap-4">
-          <label class="relative block flex-1 basis-[235px]">
-            <span class="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-5">
-              <svg class="icon fill-primary" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-                <use xlink:href="#icon-simple-email-r"></use>
+        <form action="/" class="max-w-[465px]">
+          <div class="flex flex-wrap gap-4">
+            <label class="block flex-1 basis-[275px]">
+              <span class="relative block">
+                <span>
+                  <span class="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-5">
+                    <svg class="icon fill-primary" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+                      <use xlink:href="#icon-simple-email-r"></use>
+                    </svg>
+                  </span>
+                  <input
+                    type="email"
+                    name="email"
+                    class="form-element-with-icon form-input"
+                    placeholder="Your mail address"
+                    required
+                  />
+                </span>
+              </span>
+            </label>
+            <button type="submit" class="btn btn-primary mx-auto pr-3 max-sm:order-1 max-sm:w-[140px] gap-4">
+              Submit
+              <svg class="icon ml-auto flex-none fill-white" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="#icon-arr"></use>
               </svg>
-            </span>
-            <input
-              type="email"
-              name="email"
-              class="form-element-with-icon form-input"
-              placeholder="Your mail address"
-              required
-            />
-          </label>
-          <button type="submit" class="btn btn-primary pr-3 mx-auto">
-            Submit
-            <svg class="icon ms-2 flex-none fill-white" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-              <use xlink:href="#icon-arr"></use>
-            </svg>
-          </button>
+            </button>
+            <div
+              class="relative mt-2 w-full rounded-lg border-2 border-[#D91A1A] bg-[#faf0f0] p-6 text-[#D91A1A] shadow-[0px_0px_15px_0px_rgba(217,_26,_26,_0.15)]"
+            >
+              The entered E-Mail address is not valid or authenticated. <br />In case you should have access with your
+              mail address, please contact us: info@pay-d.eu
+              <span
+                class="absolute -top-[24px] left-1/2 h-0 w-0 -translate-x-1/2 transform border-[12px] border-transparent border-b-[#D91A1A]"
+              ></span>
+              <span
+                class="absolute -top-[20px] left-1/2 h-0 w-0 -translate-x-1/2 transform border-[10px] border-transparent border-b-[#faf0f0]"
+              ></span>
+            </div>
+          </div>
         </form>
       </div>
     </div>
