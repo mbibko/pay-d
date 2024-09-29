@@ -20,7 +20,7 @@ module.exports = {
       },
       colors: {
         primary: "#0D2285",
-        secondary: "#3C3",
+        secondary: "#33cc33",
         "gray-primary": "#5d5d5d",
       },
       // backgroundImage: (theme) => ({
