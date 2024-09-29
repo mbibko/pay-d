@@ -19,6 +19,7 @@
   </head>
   <body class="{{ className }}">
     <main class="main">
+      {% include "../components/video-bg.njk" %}
       {% block content %} {% endblock %}
     </main>
     {% include "../components/footer.njk" %}
