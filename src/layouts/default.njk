@@ -1,0 +1,28 @@
+{% import "../components/elements/titles.njk" as titles %}
+{% import "../components/elements/buttons.njk" as buttons %}
+{% import "../components/elements/section.njk" as section %}
+{% import "../components/elements/modal.njk" as modal %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pay-D | {{ title or "Welcome" }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/styles/main.sass">
+  </head>
+  <body class="{{ className }}">
+    <main class="main">
+      {% block content %} {% endblock %}
+    </main>
+    {% include "../components/modals/modal-contact.njk" %}
+    {% include "../components/modals/modal-thanks.njk" %}
+    <script type="module" src="/src/scripts/main.js"></script>
+  </body>
+</html>

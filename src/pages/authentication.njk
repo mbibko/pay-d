@@ -1,0 +1,55 @@
+{% extends 'layouts/main.njk' %}
+{% block content %}
+  <div class="container my-auto py-10">
+    <div class="mx-auto max-w-[690px]">
+      <div class="flex justify-center items-center gap-8 mb-10">
+        <div>
+          <a href="/" class="block h-full"
+            ><span class="sr-only">Pay-D</span>
+            <svg width="157" height="48" class="h-full" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="#icon-logo"></use>
+            </svg>
+          </a>
+        </div>
+        <svg width="190" height="31" class="h-full" xmlns="http://www.w3.org/2000/svg">
+          <use xlink:href="#icon-toyota-logo"></use>
+        </svg>
+      </div>
+      <div
+        class="flex flex-col items-center gap-6 rounded-2xl bg-white px-6 py-10 md:p-16 shadow-[0px_0px_15px_0px_rgba(0,_0,_0,_0.05)]"
+      >
+        {{ section.header('Get access', "Welcome", "", "h2", "") }}
+        <div class="max-w-[400px]">
+          <p class="text-pretty text-center text-[#5D5D5D]">
+            Dear Visitor, Pay-D is only accessible for authorized Employees of Toyota Companies.
+          </p>
+          <p class="text-pretty text-center text-[#5D5D5D]">
+            To get access, you need to enter a valid Toyota E&#8209;Mail address in the following fields:
+          </p>
+        </div>
+        <form action="/" class="flex flex-wrap max-w-[465px] gap-4">
+          <label class="relative block flex-1 basis-[235px]">
+            <span class="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-5">
+              <svg class="icon fill-primary" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="#icon-simple-email-r"></use>
+              </svg>
+            </span>
+            <input
+              type="email"
+              name="email"
+              class="form-element-with-icon form-input"
+              placeholder="Your mail address"
+              required
+            />
+          </label>
+          <button type="submit" class="btn btn-primary pr-3 mx-auto">
+            Submit
+            <svg class="icon ms-2 flex-none fill-white" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="#icon-arr"></use>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}
