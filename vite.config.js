@@ -6,6 +6,7 @@ import postcss from "@vituum/vite-plugin-postcss";
 import tailwindcss from "@vituum/vite-plugin-tailwindcss";
 
 export default {
+  base: "/pay-d/",
   plugins: [
     vituum({
       imports: {
