@@ -79,10 +79,12 @@ document.querySelectorAll(".js-modal").forEach((modalWrapper) => {
   let modalBackdrop = modalWrapper.querySelector(".modal-backdrop");
 
   const openModal = () => {
+    document.body.classList.add("overflow-hidden");
     modalWrapper.classList.add("active");
     setTimeout(() => modalWrapper.classList.add("show"), 300);
   };
   const closeModal = () => {
+    document.body.classList.remove("overflow-hidden");
     modalWrapper.classList.remove("show");
     setTimeout(() => {
       modalWrapper.classList.remove("active");
