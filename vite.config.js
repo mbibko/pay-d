@@ -6,7 +6,7 @@ import postcss from "@vituum/vite-plugin-postcss";
 import tailwindcss from "@vituum/vite-plugin-tailwindcss";
 
 export default {
-  base: "/pay-d/",
+  base: mode === "production" ? "/pay-d-dist/" : "",
   plugins: [
     vituum({
       imports: {
